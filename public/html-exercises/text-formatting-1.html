@@ -5,7 +5,7 @@
   <title>CMSC 2 Introduction to Internet</title>	
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
-	<link href="../css/prettify.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/github-gist.css">
 </head>
 
 <body>
@@ -49,7 +49,7 @@
 			<hr/>
 			<!--Headlines or Headings-->
 			<h4>Headlines or Headings</h4>
-			Headline or heading tags are usually used to denote a title or subtitle. There are six levels of headlines, ranging from <code class="prettify">&lt;h1>…&lt;/h1&gt;</code> to <code class="prettify">&lt;h6>…&lt;/h6&gt;</code> with the <code class="prettify">&lt;h1&gt;</code> tag being the largest and <code class="prettify">&lt;h6&gt;</code> tag being the smallest. Each time you place a heading tag, your web browser automatically places a line break after your ending tag.
+			Headline or heading tags are usually used to denote a title or subtitle. There are six levels of headlines, ranging from <code>&lt;h1>…&lt;/h1&gt;</code> to <code>&lt;h6>…&lt;/h6&gt;</code> with the <code>&lt;h1&gt;</code> tag being the largest and <code>&lt;h6&gt;</code> tag being the smallest. Each time you place a heading tag, your web browser automatically places a line break after your ending tag.
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -64,7 +64,7 @@
 					<h6>Level 6 Headline</h6>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;h1&gt;Level 1 Headline&lt;/h1&gt;
+			<div class="highlight"><pre class="html"><code>&lt;h1&gt;Level 1 Headline&lt;/h1&gt;
 &lt;h2&gt;Level 2 Headline&lt;/h2&gt;
 &lt;h3&gt;Level 3 Headline&lt;/h3&gt;
 &lt;h4&gt;Level 4 Headline&lt;/h4&gt;
@@ -75,7 +75,7 @@
 			<hr/>
 			<!--Paragraphs and Line Breaks-->
 			<h4>Paragraphs and Line Breaks</h4>
-			HTML content can be divided into paragraphs using the <code class="prettify">&lt;p&gt;</code> tag. It adds space between your paragraphs.
+			HTML content can be divided into paragraphs using the <code>&lt;p&gt;</code> tag. It adds space between your paragraphs.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -87,12 +87,12 @@
 					<p>This is the last paragraph.</p>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;p&gt; This is a paragraph. &lt;/p&gt;
+			<div class="highlight"><pre class="html"><code>&lt;p&gt; This is a paragraph. &lt;/p&gt;
 &lt;p&gt; This is another paragraph. &lt;/p&gt;
 &lt;p&gt; This is the last paragraph. &lt;/p&gt;</code></pre>
 			</div>
 
-			If you want a line break (new line) without starting a new paragraph, then the <code class="prettify">&lt;br&gt;</code> tag is used. The <code class="prettify">&lt;br&gt;</code> tag is empty, which means it does not need a closing tag. However, for <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> validity, you can add a slash before the greater-than sign.
+			If you want a line break (new line) without starting a new paragraph, then the <code>&lt;br&gt;</code> tag is used. The <code>&lt;br&gt;</code> tag is empty, which means it does not need a closing tag. However, for <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> validity, you can add a slash before the greater-than sign.
 		
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -102,15 +102,15 @@
 					We<br/>need<br/>a<br/>break.
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>We&lt;br/&gt;need&lt;br/&gt;a&lt;br/&gt;break.</code></pre>
+			<div class="highlight"><pre class="html"><code>We&lt;br/&gt;need&lt;br/&gt;a&lt;br/&gt;break.</code></pre>
 			</div>
 
-			The <code class="prettify">&lt;br&gt;</code> element is an empty HTML element. It has no end tag.
+			The <code>&lt;br&gt;</code> element is an empty HTML element. It has no end tag.
 
 			<hr/>
 			<!--Emphasis, Strong and Horizontal Rules-->
 			<h4>Emphasis, Strong and Horizontal Rules</h4>
-			The <code class="prettify">&lt;em&gt;</code> tag defines emphasized text while the <code class="prettify">&lt;strong&gt;</code> tag defines strong text.
+			The <code>&lt;em&gt;</code> tag defines emphasized text while the <code>&lt;strong&gt;</code> tag defines strong text.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -121,13 +121,13 @@
 					This text is <em>emphasized</em>.
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;p&gt;
+			<div class="highlight"><pre class="html"><code>&lt;p&gt;
 	This text is &lt;strong&gt; strong &lt;/strong&gt;.
 	This text is &lt;em&gt; emphasized &lt;/em&gt;.
 &lt;/p&gt;</code></pre>
 			</div>
 
-			The <code class="prettify">&lt;hr&gt;</code> tag creates a horizontal line in an HTML page. Similar to the <code class="prettify">&lt;br&gt;</code> tag, the <code class="prettify">&lt;hr&gt;</code> tag does not need a closing tag.
+			The <code>&lt;hr&gt;</code> tag creates a horizontal line in an HTML page. Similar to the <code>&lt;br&gt;</code> tag, the <code>&lt;hr&gt;</code> tag does not need a closing tag.
 
 			<div class="panel panel-default">
 					<div class="panel-heading">
@@ -139,7 +139,7 @@
 						<p>some boundaries.</p>
 					</div>
 				</div>
-				<div class="highlight"><pre class="prettyprint"><code>&lt;p&gt;I’m setting&lt;/p&gt;
+				<div class="highlight"><pre class="html"><code>&lt;p&gt;I’m setting&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;some boundaries.&lt;/p&gt;</code></pre>
 			</div>
@@ -147,7 +147,7 @@
 			<hr/>
 			<!--Quotes-->
 			<h4>Quotes</h4>
-			The <code class="prettify">&lt;q&gt;</code> tag defines a short quotation. When a &lt;q&gt; tag is used, the browser usually inserts quotation marks around the element.
+			The <code>&lt;q&gt;</code> tag defines a short quotation. When a &lt;q&gt; tag is used, the browser usually inserts quotation marks around the element.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -157,11 +157,11 @@
 					<p>Victory's goal is to: <q>Honor God and make disciples.</q></p>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;p&gt;Victory's goal is to: &lt;q&gt;Honor God and make disciples.&lt;/q&gt;&lt;/p&gt;
+			<div class="highlight"><pre class="html"><code>&lt;p&gt;Victory's goal is to: &lt;q&gt;Honor God and make disciples.&lt;/q&gt;&lt;/p&gt;
 </code></pre>
 			</div>
 
-			The <code class="prettify">&lt;blockquote&gt;</code> tag defines a long quotation. When it is used, the browser usually indents the element.
+			The <code>&lt;blockquote&gt;</code> tag defines a long quotation. When it is used, the browser usually indents the element.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -174,7 +174,7 @@
 					</blockquote>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;p&gt;The following description of XHTML is taken from the W3C Web site:&lt;/p&gt;
+			<div class="highlight"><pre class="html"><code>&lt;p&gt;The following description of XHTML is taken from the W3C Web site:&lt;/p&gt;
 &lt;blockquote&gt;
 	XHTML 1.0 is the W3C's first Recommendation for XHTML, following on from earlier work on HTML 4.01, HTML 4.0, HTML 3.2 and HTML 2.0
 &lt;/blockquote&gt;</code></pre>
@@ -183,7 +183,7 @@
 			<hr/>
 			<!--Preformatted Text-->
 			<h4>Preformatted Text</h4>
-			The <code class="prettify">&lt;pre&gt;</code> tag defines preformatted text. Text in a <code class="prettify">&lt;pre&gt;</code> element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.
+			The <code>&lt;pre&gt;</code> tag defines preformatted text. Text in a <code>&lt;pre&gt;</code> element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -196,7 +196,7 @@
 W     O     R     L     D</pre>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;pre&gt;
+			<div class="highlight"><pre class="html"><code>&lt;pre&gt;
 H     E     L     L     O
 
 
@@ -207,7 +207,7 @@ W     O     R     L     D
 			<hr/>
 			<!--Abbreviations, Addresses and Citations-->
 			<h4>Abbreviations, Addresses and Citations</h4>
-			The <code class="prettify">&lt;abbr&gt;</code> tag defines an abbreviation or an acronym. Notice that if you hover on to the text UP, the meaning of the abbreviation is shown.
+			The <code>&lt;abbr&gt;</code> tag defines an abbreviation or an acronym. Notice that if you hover on to the text UP, the meaning of the abbreviation is shown.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -217,10 +217,10 @@ W     O     R     L     D
 					<p><abbr title="University of the Philippines">UP</abbr> was founded in 1908.</p>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;p&gt;&lt;abbr title="University of the Philippines"&gt;UP&lt;/abbr&gt; was founded in 1908.&lt;/p&gt;</code></pre>
+			<div class="highlight"><pre class="html"><code>&lt;p&gt;&lt;abbr title="University of the Philippines"&gt;UP&lt;/abbr&gt; was founded in 1908.&lt;/p&gt;</code></pre>
 			</div>
 
-			The <code class="prettify">&lt;address&gt;</code> tag defines contact information (author/owner) of a document or article. It is usually displayed in italics.
+			The <code>&lt;address&gt;</code> tag defines contact information (author/owner) of a document or article. It is usually displayed in italics.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -230,10 +230,10 @@ W     O     R     L     D
 					<address>Institute of Computer Science, Physical Sciences building, UPLB</address>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;address&gt;Institute of Computer Science, Physical Sciences building, UPLB&lt;/address&gt;</code></pre>
+			<div class="highlight"><pre class="html"><code>&lt;address&gt;Institute of Computer Science, Physical Sciences building, UPLB&lt;/address&gt;</code></pre>
 			</div>
 
-			The <code class="prettify">&lt;cite&gt;</code> tag defines the title of a work. It is usually displayed in italics.
+			The <code>&lt;cite&gt;</code> tag defines the title of a work. It is usually displayed in italics.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -243,7 +243,7 @@ W     O     R     L     D
 					<p><cite>Trees</cite> by Joyce Kilmer</p>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;p&gt;&lt;cite&gt;Trees&lt;/cite&gt; by Joyce Kilmer&lt;/p&gt;</code></pre>
+			<div class="highlight"><pre class="html"><code>&lt;p&gt;&lt;cite&gt;Trees&lt;/cite&gt; by Joyce Kilmer&lt;/p&gt;</code></pre>
 			</div>
 			
 			<hr/>
@@ -260,16 +260,11 @@ W     O     R     L     D
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/prettify.js"></script>
+<script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script type="text/javascript" src="../js/ZeroClipboard.min.js"></script>
 <script>
-	!function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
-    })
-	}(window.jQuery)
-  
-	 //Config ZeroClipboard
+	//Config ZeroClipboard
 	ZeroClipboard.config({
 		hoverClass: 'btn-clipboard-hover'
 	})

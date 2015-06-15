@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CMSC 2 Introduction to Internet</title>	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/github-gist.css">
+
+</head>
+
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1 id="title">
+					CMSC 2 <small>Introduction to Internet</small>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-3 column">
+			<ul class="nav nav-pills nav-stacked">
+				<li>
+					<a href="../index.html">Home</a>
+				</li>
+				<li>
+					<a href="#">Hello World</a>
+				</li>
+				<li class="active">
+					<a href="text-formatting-1.html">Text Formatting 1</a>
+				</li>
+				<li>
+					<a href="text-formatting-2.html">Text Formatting 2</a>
+				</li>
+				<li>
+					<a href="images-1.html">Images 1</a>
+				</li>
+				<li>
+					<a href="images-2.html">Images 2</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-9 column">
+			<h2>Selectors 1</h2>
+			<abbr title="">CSS</abbr> is a style sheet language developed to control the presentation of markup language documents. <q>HTML is to content while CSS is to design.</q> Using CSS, you can:
+			<ul>
+				<li>change the style and layout of your page without changing its content</li>
+				<li>use one or a small number of CSS files to control how your whole website will look like</li>
+				<li>define separate styles for different kinds of media without changing the structure of your website</li>
+			</ul>
+			
+			A CSS rule set consists of a <em>selector</em> and a <em>declaration block</em>. The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons. Each declaration includes a property name and a value, separated by a colon.
+			
+			<br/>
+			<img src="../img/css-syntax.png" alt="CSS Syntax" style="width:800px;"/>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					h1 {color: blue;}
+				</div>
+			</div>
+			<div class="highlight"><pre class="css"><code>h1 {color: blue;}</code></pre>
+			</div>
+	
+			<hr/>
+			<!--Cas-->
+			<h4>Headlines or Headings</h4>
+			Headline or heading tags are usually used to denote a title or subtitle. There are six levels of headlines, ranging from <code class="prettify">&lt;h1>…&lt;/h1&gt;</code> to <code class="prettify">&lt;h6>…&lt;/h6&gt;</code> with the <code class="prettify">&lt;h1&gt;</code> tag being the largest and <code class="prettify">&lt;h6&gt;</code> tag being the smallest. Each time you place a heading tag, your web browser automatically places a line break after your ending tag.
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<h1>Level 1 Headline</h1>
+					<h2>Level 2 Headline</h2>
+					<h3>Level 3 Headline</h3>
+					<h4>Level 4 Headline</h4>
+					<h5>Level 5 Headline</h5>
+					<h6>Level 6 Headline</h6>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;h1&gt;Level 1 Headline&lt;/h1&gt;
+&lt;h2&gt;Level 2 Headline&lt;/h2&gt;
+&lt;h3&gt;Level 3 Headline&lt;/h3&gt;
+&lt;h4&gt;Level 4 Headline&lt;/h4&gt;
+&lt;h5&gt;Level 5 Headline&lt;/h5&gt;
+&lt;h6&gt;Level 6 Headline&lt;/h6&gt;</code></pre>
+			</div>
+			
+			<hr/>
+			<!--References-->
+			<h4>References</h4>
+			<ul>
+				<li> <a href="http://www.w3schools.com/html/html_formatting.asp">W3Schools</a> </li>
+				<li> <a href="http://www.goodellgroup.com/tutorial/chapter5.html">Goodell Group</a> </li>
+			</ul>
+		</div><!--col-md-9-->
+	</div><!--end of row-->
+</div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/ZeroClipboard.min.js"></script>
+<script>
+	 //Config ZeroClipboard
+	ZeroClipboard.config({
+		hoverClass: 'btn-clipboard-hover'
+	})
+
+	// Insert copy to clipboard button before .highlight
+	$('.highlight').each(function () {
+		var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>';
+		$(this).before(btnHtml)
+	});
+
+	var zeroClipboard = new ZeroClipboard($('.btn-clipboard'));
+	var htmlBridge = $('#global-zeroclipboard-html-bridge');
+
+	// Handlers for ZeroClipboard
+	zeroClipboard.on('ready', function (event) {
+		htmlBridge
+			.data('placement', 'top')
+			.attr('title', 'Copy to clipboard')
+			.tooltip();
+
+		// Copy to clipboard
+		zeroClipboard.on('copy', function (event) {
+			var highlight = $(event.target).parent().nextAll('.highlight').first();
+			event.clipboardData.setData("text/plain", highlight.text())
+		});
+
+		// Notify copy success and reset tooltip title
+		zeroClipboard.on('aftercopy', function () {
+			htmlBridge
+				.attr('title', 'Copied!')
+				.tooltip('fixTitle')
+				.tooltip('show')
+				.attr('title', 'Copy to clipboard')
+				.tooltip('fixTitle')
+		});
+	});
+
+	// Notify copy failure
+	zeroClipboard.on('error', function () {
+		ZeroClipboard.destroy();
+		htmlBridge
+			.attr('title', 'Flash required')
+			.tooltip('fixTitle')
+			.tooltip('show');
+	});
+</script>
+
+</body>
+</html>

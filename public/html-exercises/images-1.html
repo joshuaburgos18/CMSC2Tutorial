@@ -5,7 +5,7 @@
   <title>CMSC 2 Introduction to Internet</title>	
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
-	<link href="../css/prettify.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/github-gist.css">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
 					<img src="../img/baby.jpg" alt="This is a cute baby.">
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;</code></pre>
+			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;</code></pre>
 			</div>
 			
 			<br/>
@@ -87,7 +87,7 @@
 					<img src="../img/baby.jpg" width="200px" height="150px" alt="This is a cute baby.">
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; width=&quot;200px&quot; height=&quot;150px&quot;/&gt;
+			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; width=&quot;200px&quot; height=&quot;150px&quot;/&gt;
 &lt;!--Using the style attribute--&gt;
 &lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; style=&quot;width:200px;height:150px;&quot;/&gt;</code></pre>
 			</div>
@@ -104,7 +104,7 @@
 					This is a cute baby.
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; width=&quot;200px&quot; height=&quot;150px&quot; align=&quot;right&quot;/&gt;
+			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; width=&quot;200px&quot; height=&quot;150px&quot; align=&quot;right&quot;/&gt;
 &lt;!--Using the style attribute--&gt;
 &lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; style=&quot;width:200px;height:150px;float:right;&quot;/&gt;</code></pre>
 			</div>
@@ -127,7 +127,7 @@
 					<img src="../img/baby.jpg" alt="This is a cute baby.">
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;img src=&quot;C://Users/Betel/baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;
+			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;C://Users/Betel/baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;
 &lt;!--OR--&gt;
 &lt;img src=&quot;/etc/home/Downloads/baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;
 &lt;!--OR--&gt;
@@ -145,7 +145,7 @@
 					<img src="../img/baby.jpg" alt="This is a cute baby.">
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;!--If image is located in the same directory as the web page--&gt;
+			<div class="highlight"><pre class="html"><code>&lt;!--If image is located in the same directory as the web page--&gt;
 &lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;
 &lt;!--If image is located in a folder located in the directory of the web page--&gt;
 &lt;img src=&quot;folder/baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;
@@ -178,7 +178,7 @@
 					<a href="https://google.com"><img src="../img/baby.jpg" alt="This is a cute baby."></a>
 				</div>
 			</div>
-			<div class="highlight"><pre class="prettyprint"><code>&lt;a href=&quot;https://google.com&quot;&gt;&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;&lt;/a&gt;
+			<div class="highlight"><pre class="html"><code>&lt;a href=&quot;https://google.com&quot;&gt;&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;&lt;/a&gt;
 &lt;!--An image can also be used to link to other web pages of your site--&gt;
 &lt;a href=&quot;another-page.html&quot;&gt;&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;&lt;/a&gt;</code></pre>
 			</div>
@@ -198,16 +198,11 @@
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/prettify.js"></script>
+<script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script type="text/javascript" src="../js/ZeroClipboard.min.js"></script>
 <script>
-	!function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
-    })
-	}(window.jQuery)
-  
-	 //Config ZeroClipboard
+	//Config ZeroClipboard
 	ZeroClipboard.config({
 		hoverClass: 'btn-clipboard-hover'
 	})
