@@ -6,7 +6,6 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/github-gist.css">
-
 </head>
 
 <body>
@@ -52,54 +51,532 @@
 				<li>define separate styles for different kinds of media without changing the structure of your website</li>
 			</ul>
 			
-			A CSS rule set consists of a <em>selector</em> and a <em>declaration block</em>. The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons. Each declaration includes a property name and a value, separated by a colon.
+			A CSS rule set consists of a <strong>selector</strong> and a <strong>declaration block</strong>. The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons. Each declaration includes a <strong>property</strong> name and a <strong>value</strong>, separated by a colon. There are various properties that can be used to set the display of HTML elements, and they are easy to remember since property names are self-descriptive.
 			
 			<br/>
-			<img src="../img/css-syntax.png" alt="CSS Syntax" style="width:800px;"/>
+			<img src="/images/css-syntax.png" alt="CSS Syntax" style="width:800px;"/>
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					h1 {color: blue;}
+					<h1 style="color: blue; text-align: center;">Hello World!</h1>
+					<h6>How are you?</h6>
 				</div>
 			</div>
-			<div class="highlight"><pre class="css"><code>h1 {color: blue;}</code></pre>
+			<div class="highlight"><pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+	&lt;title&gt;CMSC 2 Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1&gt;Hello World!&lt;/h1&gt;
+	&lt;h6&gt;How are you?&lt;/h6&gt;
+&lt;/body&gt;</code></pre>
 			</div>
+			<div class="highlight"><pre class="css"><code>h1 {color: blue; text-align: center}</code></pre>
+			</div>
+			The example above sets the display of all <code>&lt;h1&gt;</code> tags in the web page. The color and alignment properties are modified to blue and center, repectively.
+			
+			<hr/>
+			<!--Ways to Insert CSS-->
+			<h4>Ways to Insert CSS</h4>
+			There are three ways of inserting a style sheet:
+				<ul>
+					<li>External Style Sheet</li>
+					<li>Internal Style Sheet</li>
+					<li>Inline Style</li>
+				</ul>
+			
+			<br/>
+			<h5>External Style Sheet</h5>
+			An external style sheet can be written in any text editor. The file should not contain any html tags, only the CSS rules. The style sheet file must be saved with a <strong>.css</strong> extension. With an external style sheet, you can design an entire website by changing just one file. 
+			
+			<br/><br/>
+			To design an entire website using an external style sheet, each web page must include a reference to the external style sheet using the <code>&lt;link&gt;</code> element. The <code>&lt;link&gt;</code> element goes inside the <code>&lt;head&gt;</code> section. For example, <em>mystyle.css</em> is the name of the style sheet you want to use in your web page.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;head&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/mystyle.css&quot;&gt;
+&lt;/head&gt;</code></pre>
+			</div>
+			The example above used a relative path to state the location of the style sheet which is inside a folder named <em>css</em>. The folder is located in the same location of the HTML web page.
+			
+			 <br/> <br/>
+			<h5>Internal Style Sheet</h5>
+			Internal styles are defined within the <code>&lt;style&gt;</code> element, inside the <code>&lt;head&gt;</code> section of an HTML page. With an internal style sheet, you can design a single page.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;head&gt;
+	&lt;title&gt;CMSC 2 Example&lt;/title&gt;
+	&lt;style&gt;
+		body {
+			background-color: yellow;
+		}
+
+		h1 {
+			color: #FF0000;
+			margin-left: 40px;
+		} 
+	&lt;/style&gt;
+&lt;/head&gt;</code></pre>
+			</div>
+			
+			<br/>
+			<h5>Inline Style</h5>
+			Inline styles are added using the <code>style</code> attribute to any HTML tag. An inline style may be used to apply a unique style for a single element. The <code>style</code> attribute can contain any CSS property.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;/images/baby.jpg&quot; style=&quot;width:150px;height:100px;&quot;/&gt;</code></pre>
+			</div>
+			
+			<hr/>
+			<!--Multiple Style Sheets-->
+			<h4>Multiple Style Sheets</h4>
+			Multiple Style Sheets can be included in a single web page. But what style will be used when there is more than one style specified for an HTML element? For example, a CSS rule for the <code>&lt;h1&gt;</code> tag is defined in an internal style sheet, however another rule for the <code>&lt;h1&gt;</code> tag is defined using inline style:
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;head&gt;
+	&lt;style&gt;
+		h1 {
+			font-size: 50px;
+			color: yellow;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1 style=&quot;text-align:center;color:blue;&quot;&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+			</div>
+			
+			Notice that the <code>color</code> property is specified in both the internal style sheet and inline style.
+			
+			<br/> <br/>
+			If more than one style is specified in a web page, all the overlapping styles will override the other depending on the order and priority of style sheet:
+			<strong><ol>
+				<li>Inline style (inside an HTML element)</li>
+				<li>External and internal style sheets (in the head section)</li>
+				<li>Browser default</li>
+			</ol></strong>
+			Inline style has the highest priority, which means that from our example above, the color of the <code>&lt;h1&gt;</code> element will be blue. 
+			
+			<br/> <br/>
+			Another scenario is when the link to the external style sheet is placed below the internal style sheet in the<code>&lt;head&gt;</code> section. From the order that they are placed in the HTML file, the external style sheet will override the internal style sheet.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;head&gt;
+	&lt;style&gt;
+		h1 {
+			font-size: 50px;
+			color: yellow;
+		}
+	&lt;/style&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+			</div>
+			
+			In the example above, if the color of the <code>&lt;h1&gt;</code> element is both defined in <strong>mystyle.css</strong> and in the internal style sheet, the defined color in the external style sheet will be used.
+			
+			<hr/>
+			<!--CSS Comments-->
+			<h4>CSS Comments</h4>
+			Comments are used to explain your code, and may help you when you edit the source code at a later date. Comments are ignored by browsers. A CSS comment starts with /* and ends with */.
 	
 			<hr/>
-			<!--Cas-->
-			<h4>Headlines or Headings</h4>
-			Headline or heading tags are usually used to denote a title or subtitle. There are six levels of headlines, ranging from <code class="prettify">&lt;h1>…&lt;/h1&gt;</code> to <code class="prettify">&lt;h6>…&lt;/h6&gt;</code> with the <code class="prettify">&lt;h1&gt;</code> tag being the largest and <code class="prettify">&lt;h6&gt;</code> tag being the smallest. Each time you place a heading tag, your web browser automatically places a line break after your ending tag.
+			<!--Element Selectors-->
+			<h4>Element Selectors</h4>
+			CSS selectors allow you to select and manipulate HTML elements. CSS selectors are used to <em>find</em> (or select) HTML elements based on their id, class, type, attribute, and more.
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<h1>Level 1 Headline</h1>
-					<h2>Level 2 Headline</h2>
-					<h3>Level 3 Headline</h3>
-					<h4>Level 4 Headline</h4>
-					<h5>Level 5 Headline</h5>
-					<h6>Level 6 Headline</h6>
+					<fieldset style="background-color: gray;padding: 3px; margin: 3px;">
+						<legend>Form</legend>
+						Username: <input style="font-family:'Courier Sans';font-size: 20px;" type="text"/>
+						<input style="font-family:'Courier Sans';font-size: 20px;"type="submit"/>
+					</fieldset>
 				</div>
 			</div>
-			<div class="highlight"><pre class="html"><code>&lt;h1&gt;Level 1 Headline&lt;/h1&gt;
-&lt;h2&gt;Level 2 Headline&lt;/h2&gt;
-&lt;h3&gt;Level 3 Headline&lt;/h3&gt;
-&lt;h4&gt;Level 4 Headline&lt;/h4&gt;
-&lt;h5&gt;Level 5 Headline&lt;/h5&gt;
-&lt;h6&gt;Level 6 Headline&lt;/h6&gt;</code></pre>
+			<div class="highlight"><pre class="html"><code>&lt;fieldset&gt;
+	&lt;legend&gt;Form&lt;/legend&gt;
+	Username: &lt;input type=&quot;text&quot;/&gt;
+	&lt;input type=&quot;submit&quot;/&gt;
+&lt;/fieldset&gt;</code></pre>
 			</div>
+			<div class="highlight"><pre class="css"><code>fieldset {
+	background-color: gray; /* Sets the background color of the element */
+	padding: 3px; /* Adjusts the top, right, bottom and left padding of the element */
+	margin: 3px; /* Adjusts the top, right, bottom and left margin of the element */
+}
+input {
+	font-family: "Courier Sans"; /* Sets the font of the element */
+	font-size: 20px; /* Sets the font size of the element */
+}</code></pre>
+			</div>
+			
+			<hr/>
+			<!--ID Selectors-->
+			<h4>ID Selectors</h4>
+			The ID selector uses the <code>id</code> attribute of an HTML element to select a specific element. An id should be <strong>unique</strong> within a web page, so the <code>id</code> selector is used if you want to select a single, unique element. To select an element with a specific id, write a hash character (#), followed by the id of the element.
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<p style="font-weight: bold; font-family: 'Times New Roman', Georgia, Serif; color: #ff69b4; text-decoration: underline; text-align: justify;">
+						This text is inside a &lt;p&gt; tag under the id first.
+					</p>
+					<div>
+						This text is inside a &lt;div&gt; tag.
+					</div>
+					This is a list of colors:
+					<ul style="list-style-type: square;">
+						<li>Green</li>
+							<ol style="list-style-type: upper-roman">
+								<li>Apple Green</li>
+								<li>Blue Green</li>
+								<li>Light Green</li>
+							</ol>
+						<li>Blue</li>
+						<li>Red</li>
+						<li>Orange</li>
+					</ul>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;p id="text"&gt;
+	This text is inside a p tag under the id text.
+&lt;/p&gt;
+&lt;div&gt;
+	This text is inside a div tag.
+&lt;/div&gt;
+This is a list of colors:
+&lt;ul id="colors"&gt;
+	&lt;li&gt;Green&lt;/li&gt;
+	&lt;ol id="green-colors"&gt;
+		&lt;li&gt;Apple Green&lt;/li&gt;
+		&lt;li&gt;Blue Green&lt;/li&gt;
+		&lt;li&gt;Light Green&lt;/li&gt;
+	&lt;/ol&gt;
+	&lt;li&gt;Blue&lt;/li&gt;
+	&lt;li&gt;Red&lt;/li&gt;
+	&lt;li&gt;Orange&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>#text {
+	font-weight: bold; /* Sets the thickness of characters in a text (normal, bold or a constant value) */
+	font-family: "Times New Roman", Georgia, Serif;
+	color: #ff69b4; /* Sets the color of the text (color name, hex value or rgb value)*/
+	text-decoration: underline; /* Sets the decoration added to text (overline, line-through or underline) */
+	text-align: justify; /* Sets the horizontal alignment of text in an element (center, left or right) */
+}
+#colors {
+	list-style-type: square; /* Specifies the type of list-item marker in a list (square, circle or disc) */
+}
+#green-colors {
+	list-style-type: upper-roman; /* (upper-roman lower-roman, lower-alpha or upper-alpha) */
+}</code></pre>
+			</div>
+			
+			<hr/>
+			<!--Class Selectors-->
+			<h4>Class Selectors</h4>
+			The class selector selects elements with a specific class attribute. To select elements with a specific class, write a period character (.), followed by the name of the class.
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<p style="font-style: italic; text-indent: 50px; text-transform: uppercase; border: 5px solid black; vertical-align: middle;">
+						<img src="/images/baby.jpg" alt="This is a cute baby." style="width:80px;height:60px;margin:3px;padding:3px;"/> This text is inside a p tag under the class text.
+					</p>
+					
+					<div style="font-style: italic; text-indent: 50px; text-transform: uppercase; border: 5px solid black; vertical-align: middle;">
+						This text is inside a div tag under the class text.
+					</div>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;p class=&quot;text&quot;&gt;
+	&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt; This text is inside a p tag under the class text.
+&lt;/p&gt;
+					
+&lt;div class=&quot;text&quot;&gt;
+	This text is inside a div tag under the class text.
+&lt;/div&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>img {
+	width: 80px;
+	height: 60px;
+	padding: 3px; /* Adjusts the top, right, bottom and left padding of the element */
+	margin: 3px; /* Adjusts the top, right, bottom and left margin of the element */
+}
+.text {
+	font-style: italic; /* Specifies the font style for a text (normal, italic or oblique) */
+	text-indent: 50px; /* Specifies the indentation of the first line in a text-block */
+	text-transform: uppercase; /* Sets the capitalization of text (uppercase, lowercase or capitalize) */
+	border: 5px solid black; /* Sets the border of the element (line, style and color) */
+	vertical-align: middle; /* Sets the vertical alignment of an element (top, middle or bottom) */
+}</code></pre>
+			</div>
+			
+			<br/>
+			You can also specify that only specific HTML elements should be affected by a class.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<p style="font-style: italic; text-indent: 50px; text-transform: uppercase; border: 5px solid black; vertical-align: middle;">
+						<img src="/images/baby.jpg" alt="This is a cute baby." style="width:80px;height:60px;margin:3px;padding:3px;"/> This text is inside a p tag under the class text.
+					</p>
+					
+					<div>
+						This text is inside a div tag under the class text.
+					</div>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;p class=&quot;text&quot;&gt;
+	&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt; This text is inside a p tag under the class text.
+&lt;/p&gt;
+					
+&lt;div class=&quot;text&quot;&gt;
+	This text is inside a div tag under the class text.
+&lt;/div&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>img {
+	width: 80px;
+	height: 60px;
+	padding: 3px; /* Adjusts the top, right, bottom and left padding of the element */
+	margin: 3px; /* Adjusts the top, right, bottom and left margin of the element */
+}
+p.text {
+	font-style: italic; /* Specifies the font style for a text (normal, italic or oblique) */
+	text-indent: 50px; /* Specifies the indentation of the first line in a text-block */
+	text-transform: uppercase; /* Sets the capitalization of text (uppercase, lowercase or capitalize) */
+	border: 5px solid black; /* Sets the border of the element (line, style and color) */
+	vertical-align: middle; /* Sets the vertical alignment of an element (top, middle or bottom) */
+}</code></pre>
+			</div>
+			
+			<hr/>
+			<!--Pseudo-class Selectors-->
+			<h4>Pseudo-class Selectors</h4>
+			A CSS pseudo-class is used to style a specified special state of the element. Pseudo-class selectors are CSS selectors with a colon (:) preceding them.
+			
+			<br/> <br/>
+			<h5>Anchor Pseudo-classes</h5>
+			Links can be displayed depending on their current state.
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<a id="pseudo" href="https://google.com" style=":hover:color: #FF00FF;">This is a link.</a>
+				</div>
+			</div>
+			<div class="highlight"><pre class="css"><code>/* if link is not yet visited */
+a:link {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+/* if link is already visited*/
+a:visited {
+	color: #00FF00;
+}
+
+/* if link is hovered (mouse over) */
+a:hover {
+	color: #FF00FF;
+	text-decoration: underline;
+}
+
+/* if link is clicked */
+a:active {
+	color: #0000FF;
+}</code></pre>
+			</div>
+		
+			<br/>
+			Note that a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective. a:active MUST come after a:hover in the CSS definition in order to be effective. Pseudo-class names are not case-sensitive.
+			
+			<br/> <br/>
+			There are other various pseudo-classes that can be used to style a web page. Here is a list of the commonly used CSS pseudo-classes:
+			
+			<table class="table">
+				<tr>
+					<th style="width:20%">Selector</th>
+					<th style="width:20%">Example</th>
+					<th>Example description</th>
+				</tr>
+				<tr>
+					<td>:active</td>
+					<td>a:active</td>
+					<td>Selects the active link</td>
+				</tr>
+				<tr>
+					<td>:checked</td>
+					<td>input:checked</td>
+					<td>Selects every checked &lt;input&gt; element</td>
+				</tr>
+				<tr>
+					<td>:disabled</td>
+					<td>input:disabled</td>
+					<td>Selects every disabled &lt;input&gt; element</td>
+				</tr>
+				<tr>
+					<td>:enabled</td>
+					<td>input:enabled</td>
+					<td>Selects every enabled &lt;input&gt; element</td>
+				</tr>
+				<tr>
+					<td>:first-child</td>
+					<td>p:first-child</td>
+					<td>Selects every &lt;p&gt; elements that is the first child of its parent</td>
+				</tr>
+				<tr>
+					<td>:first-of-type</td>
+					<td>p:first-of-type</td>
+					<td>Selects every &lt;p&gt; element that is the first &lt;p&gt; element of its parent</td>
+				</tr>
+				<tr>
+					<td>:focus</td>
+					<td>input:focus</td>
+					<td>Selects the &lt;input&gt; element that has focus</td>
+				</tr>
+				<tr>
+					<td>:hover</td>
+					<td>a:hover</td>
+					<td>Selects links on mouse over</td>
+				</tr>
+				<tr>
+					<td>:last-child</td>
+					<td>p:last-child</td>
+					<td>Selects every &lt;p&gt; elements that is the last child of its parent</td>
+				</tr>
+				<tr>
+					<td>:last-of-type</td>
+					<td>p:last-of-type</td>
+					<td>Selects every &lt;p&gt; element that is the last &lt;p&gt; element of its parent</td>
+				</tr>
+				<tr>
+					<td>:link</td>
+					<td>a:link</td>
+					<td>Selects all unvisited links</td>
+				</tr>
+				<tr>
+					<td>:optional</td>
+					<td>input:optional</td>
+					<td>Selects &lt;input&gt; elements with no &quot;required&quot; attribute</td>
+				</tr>
+				</tr>
+				<tr>
+					<td>:required</td>
+					<td>input:required</td>
+					<td>Selects &lt;input&gt; elements with a &quot;required&quot; attribute specified</td>
+				</tr>
+				<tr>
+					<td>:visited</td>
+					<td>a:visited</td>
+					<td>Selects all visited links</td>
+				</tr>
+			</table>
+			
+			<hr/>
+			<!--Pseudo-elements-->
+			<h4>Pseudo-elements</h4>
+			A CSS pseudo-element is used to style specified parts of an element. Pseudo-elements are CSS selectors with a double colon (::) preceding them. This was an attempt from <abbr title="World Wide Web Consortium">W3C</abbr> to distinguish between pseudo-classes and pseudo-elements.
+			
+			<br/> <br/>
+			<h5>The <code>::first-line</code> Pseudo-element</h5>
+			The <code>::first-line</code> pseudo-element is used to add a special style to the first line of a text. The <code>::first-line</code> pseudo-element can only be applied to <strong>block</strong> elements.
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<p id="pseudoelem1">This is a paragraph. A very very long paragraph to give you an example of what pseudo-elements can do. I hope you enjoy the tutorials. Kthxbye!</p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;p&gt;
+This is a paragraph. A very very long paragraph to give you an example of what pseudo-elements can do. I hope you enjoy the tutorials. Kthxbye!
+&lt;/p&gt;</code></pre>
+			</div>
+			</div>
+			<div class="highlight"><pre class="css"><code>p::first-line {
+    color: #FF0000;
+}</code></pre>
+			</div>
+			
+			<br/>
+			There are other various pseudo-elements that can be used to style a web page. Here is a list of all the CSS pseudo-elements:
+			<table class="table">
+			  <tr>
+				<th>Selector</th>
+				<th>Example</th>
+				<th>Example description</th>
+			  </tr>
+				<tr>
+				<td>::after</td>
+				<td>p::after</td>
+				<td>Insert content after every &lt;p&gt; element</td>
+				</tr>
+				<tr>
+				<td>::before</a></td>
+				<td>p::before</td>
+				<td>Insert content before every &lt;p&gt; element</td>
+				</tr>
+				<tr>
+				<td>::first-letter</td>
+				<td>p::first-letter</td>
+				<td>Selects the first letter of every &lt;p&gt; element</td>
+			  </tr>
+				<tr>
+				<td>::first-line</td>
+				<td>p::first-line</td>
+				<td>Selects the first line of every &lt;p&gt; element</td>
+			  </tr>
+				<tr>
+				<td>::selection</td>
+				<td>p::selection</td>
+				<td>Selects the portion of an element that is selected by a user</td>
+			  </tr>
+			</table>
+			
 			
 			<hr/>
 			<!--References-->
 			<h4>References</h4>
 			<ul>
-				<li> <a href="http://www.w3schools.com/html/html_formatting.asp">W3Schools</a> </li>
-				<li> <a href="http://www.goodellgroup.com/tutorial/chapter5.html">Goodell Group</a> </li>
+				<li> <a href="http://www.w3schools.com/css/css_selectors.asp">W3Schools</a> </li>
+				<li> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">Pseudo-classes</a> </li>
 			</ul>
 		</div><!--col-md-9-->
 	</div><!--end of row-->

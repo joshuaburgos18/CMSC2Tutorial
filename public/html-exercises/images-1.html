@@ -20,36 +20,14 @@
 		</div>
 	</div>
 	<div class="row clearfix">
-		<div class="col-md-3 column">
-			<ul class="nav nav-pills nav-stacked">
-				<li>
-					<a href="../index.html">Home</a>
-				</li>
-				<li>
-					<a href="#">Hello World</a>
-				</li>
-				<li>
-					<a href="text-formatting-1.html">Text Formatting 1</a>
-				</li>
-				<li>
-					<a href="text-formatting-2.html">Text Formatting 2</a>
-				</li>
-				<li  class="active">
-					<a href="images-1.html">Images 1</a>
-				</li>
-				<li>
-					<a href="images-2.html">Images 2</a>
-				</li>
-			</ul>
-		</div>
-		<div class="col-md-9 column">
+		<div class="col-md-12 column">
 			<h2>Images 1</h2>
-			In HTML, images are defined with the <code class="prettify">&lt;img&gt;</code> tag. The <code class="prettify">&lt;img&gt;</code> tag is empty, it only contains attributes, and does not have a closing tag. However, a slash can be added before the greater-than sign for <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> validity.
+			In HTML, images are defined with the <code>&lt;img&gt;</code> tag. The <code>&lt;img&gt;</code> tag is empty, it only contains attributes, and does not have a closing tag. However, a slash can be added before the greater-than sign for <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> validity.
 	
 			<hr/>
 			<!--Attributes-->
-			<h4>Attributes</h4>
-			There are two important attributes of an <code class="prettify">&lt;img&gt;</code> tag:
+			<h4>Attributes of <code>&lt;img&gt;</code> tag</h4>
+			There are two important attributes of an <code>&lt;img&gt;</code> tag:
 			<table class="table">
 				<tr>
 					<th> Attribute </th>
@@ -57,11 +35,11 @@
 				</tr>
 				<tr>
 					<td> src </td>
-					<td> stands for "source" which provides the web browser the source of the image </td>
+					<td> stands for <strong>source</strong> which provides the web browser the source of the image </td>
 				</tr>
 				<tr>
 					<td> alt </td>
-					<td> stands for "alternative" which provides a text-based alternative for users in case the image will not load, or if they are visually impaired </td>
+					<td> stands for <strong>alternative</strong> which provides a text-based alternative for users in case the image will not load, or if they are visually impaired </td>
 				</tr>
 			</table>
 			
@@ -70,25 +48,25 @@
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<img src="../img/baby.jpg" alt="This is a cute baby.">
+					<img src="/images/baby.jpg" alt="This is a cute baby.">
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;</code></pre>
 			</div>
 			
 			<br/>
-			Other attributes of the <code class="prettify">&lt;img&gt;</code> tag are the <code>width</code>, <code>height</code> and <code>align</code>. The values are specified in <em>pixels </em> (px). You can also use the <code>style</code> attribute to specify the width and height of an image.
+			Other attributes of the <code>&lt;img&gt;</code> tag are the <code>width</code>, <code>height</code> and <code>align</code>. The values are specified in <strong>pixels </strong> (px). You can also use the <code>style</code> attribute to specify the width and height of an image.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<img src="../img/baby.jpg" width="200px" height="150px" alt="This is a cute baby.">
+					<img src="/images/baby.jpg" width="200px" height="150px" alt="This is a cute baby.">
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; width=&quot;200px&quot; height=&quot;150px&quot;/&gt;
-&lt;!--Using the style attribute--&gt;
+&lt;!--OR you can define them using the style attribute--&gt;
 &lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; style=&quot;width:200px;height:150px;&quot;/&gt;</code></pre>
 			</div>
 			
@@ -100,49 +78,50 @@
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<img src="../img/baby.jpg" width="200px" height="150px" align ="right" alt="This is a cute baby.">
+					<img src="/images/baby.jpg" width="200px" height="150px" align ="right" alt="This is a cute baby.">
 					This is a cute baby.
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; width=&quot;200px&quot; height=&quot;150px&quot; align=&quot;right&quot;/&gt;
-&lt;!--Using the style attribute--&gt;
+&lt;!--OR you can define them using the style attribute--&gt;
 &lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot; style=&quot;width:200px;height:150px;float:right;&quot;/&gt;</code></pre>
 			</div>
 			
 			<hr/>
 			<!--Paths-->
 			<h4>Absolute and Relative Paths</h4>
-			An image, inserted in a web page, can be found locally in your PCs or from the web. It is important that the path of the image is correct, otherwise the alternative text will be displayed.
+			An image, inserted in a web page, can be found locally in your PCs or from the web. It is important that the path of the image is correct, otherwise the alternative text will be displayed. There are two ways to specify a path: <strong>absolute or relative</strong>.
 			
-			There are two ways to specify a path: absolute or relative.
-			
+			<br/> <br/>
 			<h5>Absolute Paths</h5>
-			An absolute path gives the location of a file or directory in reference to a root directory. Absolute paths are easier to use and understand. However, it is not good practice on your own website. If you have to move your web site, you would have to change the paths in order to get it to work.
+			An absolute path gives the location of a file or directory in reference to a <strong>root directory</strong>. Absolute paths are easier to use and understand. However, it is not good practice on your own website. If you have to move your web site, you would have to change the paths in order to get it to work.
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<img src="../img/baby.jpg" alt="This is a cute baby.">
+					<img src="/images/baby.jpg" alt="This is a cute baby.">
 				</div>
 			</div>
-			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;C://Users/Betel/baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;
-&lt;!--OR--&gt;
+			<div class="highlight"><pre class="html"><code>&lt;!--Root directory in Windows --&gt;
+&lt;img src=&quot;C:/Users/Betel/baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;
+&lt;!--Root directory in Ubuntu --&gt;
 &lt;img src=&quot;/etc/home/Downloads/baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;
-&lt;!--OR--&gt;
+&lt;!--From a Website --&gt;
 &lt;img src=&quot;http://example.com/uploads/baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;</code></pre>
 			</div>
 			
+			<br/>
 			<h5>Relative Paths</h5>
-			An absolute path gives the location of a file or directory in reference to the current working directory. The current working directory denotes the path where your web page is located.
+			An absolute path gives the location of a file or directory in reference to the <strong>current working directory</strong>. The current working directory denotes the path where your web page is located.
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<img src="../img/baby.jpg" alt="This is a cute baby.">
+					<img src="/images/baby.jpg" alt="This is a cute baby.">
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;!--If image is located in the same directory as the web page--&gt;
@@ -159,28 +138,28 @@
 					<h3 class="panel-title">More Examples</h3>
 				</div>
 				<div class="panel-body">
-					<img src="../img/path1.png" alt="Example of paths" width="100%"/>
+					<img src="/images/path1.png" alt="Example of paths" width="100%"/>
 					<br/><br/><br/>
-					<img src="../img/path2.png" alt="Example of paths" width="100%"/>
+					<img src="/images/path2.png" alt="Example of paths" width="100%"/>
 				</div>
 			</div>
 			
 			<hr/>
 			<!--Linked Images-->
 			<h4>Images as Links</h4>
-			Aside from texts, images can also be used as links. To use an image as a link, simply nest the <code class="prettify">&lt;img&gt;</code> tag inside the <code class="prettify">&lt;a&gt;</code> tag.
+			Aside from texts, images can also be used as links. To use an image as a link, simply nest the <code>&lt;img&gt;</code> tag inside the <code>&lt;a&gt;</code> tag.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<a href="https://google.com"><img src="../img/baby.jpg" alt="This is a cute baby."></a>
+					<a href="https://google.com"><img src="/images/baby.jpg" alt="This is a cute baby."></a>
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;a href=&quot;https://google.com&quot;&gt;&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;&lt;/a&gt;
 &lt;!--An image can also be used to link to other web pages of your site--&gt;
-&lt;a href=&quot;another-page.html&quot;&gt;&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;&lt;/a&gt;</code></pre>
+&lt;a href=&quot;images-2.html&quot;&gt;&lt;img src=&quot;baby.jpg&quot; alt=&quot;This is a cute baby.&quot;/&gt;&lt;/a&gt;</code></pre>
 			</div>
 			
 			<hr/>

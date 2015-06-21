@@ -19,7 +19,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row clearfix">
+	<!--<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
 				<li>
@@ -41,15 +41,18 @@
 					<a href="images-2.html">Images 2</a>
 				</li>
 			</ul>
-		</div>
-		<div class="col-md-9 column">
+		</div>-->
+		<div class="col-md-12 column">
 			<h2>Text Formatting 1</h2>
-			HTML defines special elements for specifying how a text should appear. In this page, you’ll learn some formatting elements that will help you make your web pages a lot more exciting.
-	
+			HTML defines special elements for specifying how a text should appear. In this page, you’ll learn some formatting elements that will help you make your web pages a lot more exciting. Note that all formatting tags should be placed inside the <code>&lt;body&gt;</code> section.
+
 			<hr/>
 			<!--Headlines or Headings-->
 			<h4>Headlines or Headings</h4>
-			Headline or heading tags are usually used to denote a title or subtitle. There are six levels of headlines, ranging from <code>&lt;h1>…&lt;/h1&gt;</code> to <code>&lt;h6>…&lt;/h6&gt;</code> with the <code>&lt;h1&gt;</code> tag being the largest and <code>&lt;h6&gt;</code> tag being the smallest. Each time you place a heading tag, your web browser automatically places a line break after your ending tag.
+			Headline or heading tags are usually used to denote a title or subtitle.
+			
+			<br/> <br/>
+			There are six levels of headlines, ranging from <code>&lt;h1>…&lt;/h1&gt;</code> to <code>&lt;h6>…&lt;/h6&gt;</code> with the <code>&lt;h1&gt;</code> tag being the largest and <code>&lt;h6&gt;</code> tag being the smallest. Each time you place a heading tag, your web browser automatically places a line break (new line) after your ending tag.
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -87,12 +90,13 @@
 					<p>This is the last paragraph.</p>
 				</div>
 			</div>
-			<div class="highlight"><pre class="html"><code>&lt;p&gt; This is a paragraph. &lt;/p&gt;
-&lt;p&gt; This is another paragraph. &lt;/p&gt;
-&lt;p&gt; This is the last paragraph. &lt;/p&gt;</code></pre>
+			<div class="highlight"><pre class="html"><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+&lt;p&gt;This is the last paragraph.&lt;/p&gt;</code></pre>
 			</div>
-
-			If you want a line break (new line) without starting a new paragraph, then the <code>&lt;br&gt;</code> tag is used. The <code>&lt;br&gt;</code> tag is empty, which means it does not need a closing tag. However, for <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> validity, you can add a slash before the greater-than sign.
+			
+			<br/>
+			If you want a line break (new line) without starting a new paragraph, then the <code>&lt;br&gt;</code> tag is used. The <code>&lt;br&gt;</code> tag is empty, which means it does not need a closing tag. However, for <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> validity, you can add a <strong>slash</strong> before the greater-than sign.
 		
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -104,8 +108,6 @@
 			</div>
 			<div class="highlight"><pre class="html"><code>We&lt;br/&gt;need&lt;br/&gt;a&lt;br/&gt;break.</code></pre>
 			</div>
-
-			The <code>&lt;br&gt;</code> element is an empty HTML element. It has no end tag.
 
 			<hr/>
 			<!--Emphasis, Strong and Horizontal Rules-->
@@ -121,12 +123,11 @@
 					This text is <em>emphasized</em>.
 				</div>
 			</div>
-			<div class="highlight"><pre class="html"><code>&lt;p&gt;
-	This text is &lt;strong&gt; strong &lt;/strong&gt;.
-	This text is &lt;em&gt; emphasized &lt;/em&gt;.
-&lt;/p&gt;</code></pre>
+			<div class="highlight"><pre class="html"><code>This text is &lt;strong&gt;strong&lt;/strong&gt;.
+This text is &lt;em&gt;emphasized&lt;/em&gt;.</code></pre>
 			</div>
-
+			
+			<br/>
 			The <code>&lt;hr&gt;</code> tag creates a horizontal line in an HTML page. Similar to the <code>&lt;br&gt;</code> tag, the <code>&lt;hr&gt;</code> tag does not need a closing tag.
 
 			<div class="panel panel-default">
@@ -134,20 +135,20 @@
 						<h3 class="panel-title">Example</h3>
 					</div>
 					<div class="panel-body">
-						<p>I’m setting</p>
+						<p>This is you.</p>
 						<hr/>
-						<p>some boundaries.</p>
+						<p>This is me.</p>
 					</div>
 				</div>
-				<div class="highlight"><pre class="html"><code>&lt;p&gt;I’m setting&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;some boundaries.&lt;/p&gt;</code></pre>
+				<div class="highlight"><pre class="html"><code>&lt;p&gt;This is you.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;This is me.&lt;/p&gt;</code></pre>
 			</div>
 			
 			<hr/>
 			<!--Quotes-->
 			<h4>Quotes</h4>
-			The <code>&lt;q&gt;</code> tag defines a short quotation. When a &lt;q&gt; tag is used, the browser usually inserts quotation marks around the element.
+			The <code>&lt;q&gt;</code> tag defines a short quotation.When a <code>&lt;q&gt;</code> tag is used, the browser usually inserts quotation marks around the element.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -161,6 +162,7 @@
 </code></pre>
 			</div>
 
+			<br/>
 			The <code>&lt;blockquote&gt;</code> tag defines a long quotation. When it is used, the browser usually indents the element.
 			
 			<div class="panel panel-default">
@@ -207,7 +209,7 @@ W     O     R     L     D
 			<hr/>
 			<!--Abbreviations, Addresses and Citations-->
 			<h4>Abbreviations, Addresses and Citations</h4>
-			The <code>&lt;abbr&gt;</code> tag defines an abbreviation or an acronym. Notice that if you hover on to the text UP, the meaning of the abbreviation is shown.
+			The <code>&lt;abbr&gt;</code> tag defines an abbreviation or an acronym. The <code>title</code> attribute is used to define the meaning of the abbreviation or acronym. In the example below, if you hover on to the text UP, the meaning of the abbreviation is shown.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -219,7 +221,8 @@ W     O     R     L     D
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;p&gt;&lt;abbr title="University of the Philippines"&gt;UP&lt;/abbr&gt; was founded in 1908.&lt;/p&gt;</code></pre>
 			</div>
-
+			
+			<br/>
 			The <code>&lt;address&gt;</code> tag defines contact information (author/owner) of a document or article. It is usually displayed in italics.
 			
 			<div class="panel panel-default">
@@ -227,12 +230,13 @@ W     O     R     L     D
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<address>Institute of Computer Science, Physical Sciences building, UPLB</address>
+					<address style="font-style:italic;">Institute of Computer Science, Physical Sciences building, UPLB</address>
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;address&gt;Institute of Computer Science, Physical Sciences building, UPLB&lt;/address&gt;</code></pre>
 			</div>
-
+			
+			<br/>
 			The <code>&lt;cite&gt;</code> tag defines the title of a work. It is usually displayed in italics.
 			
 			<div class="panel panel-default">
@@ -240,7 +244,7 @@ W     O     R     L     D
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<p><cite>Trees</cite> by Joyce Kilmer</p>
+					<p><cite style="font-style:italic;">Trees</cite> by Joyce Kilmer</p>
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;p&gt;&lt;cite&gt;Trees&lt;/cite&gt; by Joyce Kilmer&lt;/p&gt;</code></pre>
