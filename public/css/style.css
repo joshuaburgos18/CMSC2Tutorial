@@ -25,32 +25,6 @@ img.exercise {
 	margin: 2px 0;
 }
 
-/*Example styles*/
-
-/* unvisited link */
-#pseudo:link {
-	color: #FF0000;
-}
-
-/* visited link */
-#pseudo:visited {
-	color: #00FF00;
-}
-
-/* mouse over link */
-#pseudo:hover {
-	color: #FF00FF;
-}
-
-/* selected link */
-#pseudo:active {
-	color: #0000FF;
-}
-
-#pseudoelem1::first-line {
-	color: #FF0000;
-}
-
 /* ZeroClipboard styles */
 
 .zero-clipboard {
