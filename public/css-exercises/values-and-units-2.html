@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CMSC 2 Introduction to Internet</title>	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/github-gist.css">
+</head>
+
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1 id="title">
+					CMSC 2 <small>Introduction to Internet</small>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h2>Values and Units 2</h2>
+			Your file for this exercise should be saved in the public folder and should be accessed using this link: <strong>"/css-exercises/values-and-units-2.html"</strong>. The content of the HTML file is given below. With the given HTML content, design the web page using an <strong>internal style sheet</strong> in such a way it will look <strong>exactly</strong> like the screenshot below.
+			<br/>
+			<h6 style="color:red;font-weight:bold;">Note: You cannot modify the content, only the style sheet!</h6>
+			
+			<hr/>
+			Aside from the design visible in the screenshot, here are some additional details for the design of the web page:
+			<ul>
+				<li>The background color of the body should be <em>#888888</em></li>
+				<li>The font color of the subtitle should be <em>gray</em></li>
+				<li>The line height of the title and subtitle should be <em>10px</em></li>
+				<li>The poem should have a width of <em>30%</em> and left and right padding of <em>10px</em>, </li>
+				<li>The font size of the first paragraph should be <em>1.5</em> times the size of the current font</li>
+				<li>The line height of the third and fourth paragraph should be <em>20/72 in</em></li>
+				<li>Use <em>ex</em> unit to convert the <code>strong</code> elements as a subscript</li>
+			</ul>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Content</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;CMSC 2 CSS Exercise&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id=&quot;poem&quot;&gt;
+			&lt;div id=&quot;main-title&quot;&gt;
+				&lt;h1&gt;Johnny&lt;/h1&gt;
+				&lt;h3&gt;A film by Elisa Shupe&lt;/h3&gt;
+			&lt;/div&gt;
+			
+			&lt;p id=&quot;first&quot;&gt;
+				Johnny was a chemist&amp;#39;s son &lt;br/&gt;
+				His head stuffed full of brains &lt;br/&gt;
+				While Johnny&amp;#39;s thoughts were rocket ships, &lt;br/&gt;
+				Other kids&amp;#39; thoughts were trains
+			&lt;/p&gt;
+			&lt;p id=&quot;second&quot;&gt;
+				Johnny&amp;#39;s father noticed Johnny &lt;br/&gt;
+				Seldom saw the light of day &lt;br/&gt;
+				So Johnny&amp;#39;s father pushed pale Johnny &lt;br/&gt;
+				Out into the sun to play.
+			&lt;/p&gt;
+			&lt;p id=&quot;third&quot;&gt;
+				Johnny couldn&amp;#39;t swing a bat &lt;br/&gt;
+				Johnny couldn&amp;#39;t catch a ball &lt;br/&gt;
+				Science was his life-long love &lt;br/&gt;
+				His home, the lecture hall
+			&lt;/p&gt;
+			&lt;p id=&quot;fourth&quot;&gt;
+				&quot;Outside is too unpredictable, &lt;br/&gt;
+				I need some time to think. &lt;br/&gt;
+				Besides, the sun is parching me, &lt;br/&gt;
+				And I think I need a drink!&quot;
+			&lt;/p&gt;
+			&lt;p id=&quot;fifth&quot;&gt;
+				Johnny was a chemist&amp;#39;s son &lt;br/&gt;
+				But Johnny is no more &lt;br/&gt;
+				What Johnny thought was H&lt;strong class=&quot;sub&quot;&gt;2&lt;/strong&gt;O &lt;br/&gt;
+				Was H&lt;strong class=&quot;sub&quot;&gt;2&lt;/strong&gt;SO&lt;strong class=&quot;sub&quot;&gt;4&lt;/strong&gt;
+			&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Screenshot</h3>
+				</div>
+				<div class="panel-body">
+					<img src="/images/values-and-units-2.png" alt="Values and Units Exercise" style="width:100%;" />
+				</div>
+			</div>
+			
+			
+		</div><!--col-md-12-->
+	</div><!--end of row-->
+</div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/ZeroClipboard.min.js"></script>
+<script>
+	 //Config ZeroClipboard
+	ZeroClipboard.config({
+		hoverClass: 'btn-clipboard-hover'
+	})
+
+	// Insert copy to clipboard button before .highlight
+	$('.highlight').each(function () {
+		var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>';
+		$(this).before(btnHtml)
+	});
+
+	var zeroClipboard = new ZeroClipboard($('.btn-clipboard'));
+	var htmlBridge = $('#global-zeroclipboard-html-bridge');
+
+	// Handlers for ZeroClipboard
+	zeroClipboard.on('ready', function (event) {
+		htmlBridge
+			.data('placement', 'top')
+			.attr('title', 'Copy to clipboard')
+			.tooltip();
+
+		// Copy to clipboard
+		zeroClipboard.on('copy', function (event) {
+			var highlight = $(event.target).parent().nextAll('.highlight').first();
+			event.clipboardData.setData("text/plain", highlight.text())
+		});
+
+		// Notify copy success and reset tooltip title
+		zeroClipboard.on('aftercopy', function () {
+			htmlBridge
+				.attr('title', 'Copied!')
+				.tooltip('fixTitle')
+				.tooltip('show')
+				.attr('title', 'Copy to clipboard')
+				.tooltip('fixTitle')
+		});
+	});
+
+	// Notify copy failure
+	zeroClipboard.on('error', function () {
+		ZeroClipboard.destroy();
+		htmlBridge
+			.attr('title', 'Flash required')
+			.tooltip('fixTitle')
+			.tooltip('show');
+	});
+</script>
+
+</body>
+</html>

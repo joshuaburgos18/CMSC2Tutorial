@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CMSC 2 Introduction to Internet</title>	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/github-gist.css">
+	<style>
+		/* Example Styles */
+		#emvsrem {
+		    font-size: 14px;
+		}
+		#emvsrem div {
+		    font-size: 1.2em;
+		}
+		.sup {
+		    position: relative;
+		    bottom: 1ex;
+		}
+		.sub {
+		    position: relative;
+		    bottom: -1ex;
+		}
+	</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1 id="title">
+					CMSC 2 <small>Introduction to Internet</small>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h2>Values and Units 1</h2>
+			Your file for this exercise should be saved in the public folder and should be accessed using this link: <strong>"/css-exercises/values-and-units-1.html"</strong>.
+			
+			<br/> <br/>
+			
+			Your file for here should be saved in the public folder and should be accessed using this link: <strong>"/css-exercises/values-and-units-1.html"</strong>. Include all the CSS rules using an <strong>internal style sheet</strong>.
+			
+			<br/> <br/>
+			
+			Measurements and positions in CSS properties, such as <code>width</code>, <code>margin</code>, <code>padding</code>, <code>font-size</code>, <code>border-width</code>, etc., are expressed in length units. Length is a number followed by a length unit, such as 10px, 2em, etc. For some CSS properties, negative lengths are allowed. There are two types of length units: <strong>relative</strong> and <strong>absolute</strong>.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<p style="width:80%;font-size:3em;text-indent:20px;border:1px solid black;margin:0px auto;">This is an example of a paragraph.</p>
+				</div>
+			</div>
+			<div class="highlight"><pre class="css"><code>p {
+	margin: 0px auto;	/* this declaration makes the element center-aligned */
+	border: 1px solid black;
+	width: 80%;
+	font-size: 3em;
+	text-indent: 20px;
+}</code></pre>
+			</div>
+			
+			<hr/>
+			<!--Relative Length Units-->
+			<h4>Relative Length Units</h4>
+			Relative length units specify a length relative to another length property. Relative length units scales better between different rendering mediums.
+			
+			<br/> <br/>
+			<table class="table">
+			  <tr>
+			    <th style="width:12%">Unit</th>
+			    <th>Description</th>
+			  </tr>
+			  <tr>
+			    <td>em</td>
+			    <td>Relative to the font-size of the element (2em means 2 times the size of the current font)</td>
+			  </tr>
+			  <tr>
+			    <td>ex</td>
+			    <td>Relative to the x-height of the current font (rarely used)</td>
+			  </tr>
+			  <tr>
+			    <td>ch</td>
+			    <td>Relative to width of the &quot;0&quot; (zero)</td>
+			  </tr>
+			  <tr>
+			    <td>rem</td>
+			    <td>Relative to font-size of the root element</td>
+			  </tr>
+			  <tr>
+			    <td>vw</td>
+			    <td>Relative to 1% of the width of the viewport</td>
+			  </tr>
+			  <tr>
+			    <td>vh</td>
+			    <td>Relative to 1% of the height of the viewport</td>
+			  </tr>
+			  <tr>
+			    <td>vmin</td>
+			    <td>Relative to 1% of viewport's smaller dimension</td>
+			  </tr>
+			  <tr>
+			    <td>vmax</td>
+			    <td>Relative to 1% of viewport's larger dimension</td>
+			  </tr>
+			  <tr>
+			    <td>%</td>
+			    <td>&nbsp;</td>
+			  </tr>
+			</table>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<h1 style="line-height: 1.5em;">This heading 1.</h1>
+					<h2 style="font-size: 1.2ex;">This heading 2.</h2>
+					<h3 style="word-spacing: 4ch;">This heading 3.</h3>
+					<h4 style="font-size: 10rem;">This heading 4.</h4>
+					<h4 style="border:1px solid black;width:30%;">This heading 5.</h4>
+				</div>
+			</div>
+			<div class="highlight"><pre class="css"><code>h1 { line-height: 1.5em; } /*specifies the line height*/
+h2 { font-size: 1.2ex; }
+h3 { word-spacing: 4ch; }
+h4 { font-size: 10rem; }
+h5 { border: 1px solid black; width: 30%; }</code></pre>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example of <code>em</code></h3>
+				</div>
+				<div class="panel-body">
+					<div id="emvsrem">
+					    <div>
+					        Test (14 * 1.2 = 16.8px)
+					        <div>
+					            Test (16.8 * 1.2 = 20.16px)
+					            <div>
+					                Test (20.16 * 1.2 = 24.192px)
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;div id=&quot;main&quot;&gt;
+	&lt;div&gt;
+		Test (14 * 1.2 = 16.8px)
+		&lt;div&gt;
+			Test (16.8 * 1.2 = 20.16px)
+			&lt;div&gt;
+				Test (20.16 * 1.2 = 24.192px)
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>#main {
+	font-size: 14px;
+}
+#main div {	/* Applies to all div tags inside the tag with the id main */
+	font-size: 1.2em;
+}</code></pre>
+			</div>
+			The example above shows how <code>em</code> works in nested tags. Now using same HTML content, <strong>TRY</strong> to change <code>em</code> to <code>rem</code> and see the difference.
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example of <code>ex</code></h3>
+				</div>
+				<div class="panel-body">
+					<p>y = x<strong class="sup">2</strong> + 4x + 2</p>
+					<p>Water is H<strong class="sub">2</strong>O.</p>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;p&gt;y = x&lt;strong class=&quot;sup&quot;&gt;2&lt;/strong&gt; + 4x + 2&lt;/p&gt;
+&lt;p&gt;Water is H&lt;strong class=&quot;sub&quot;&gt;2&lt;/strong&gt;O.&lt;/p&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>.sup {
+    position: relative;
+    bottom: 1ex;
+}
+.sub {
+    position: relative;
+    bottom: -1ex;
+}</code></pre>
+			</div>
+			
+			<hr/>
+			<!--Absolute Length Units-->
+			<h4>Absolute Length Units</h4>
+			The absolute length units are fixed and a length expressed in any of these will appear as exactly that size. Absolute length units are not recommended for use on screen, because screen sizes vary so much. However, they can be used if the output medium is known.
+			
+			<br/> <br/>
+			<table class="table">
+			  <tr>
+			    <th style="width:12%">Unit</th>
+			    <th>Description</th>
+			  </tr>
+			  <tr>
+			    <td>cm</td>
+			    <td>centimeters </td>
+			  </tr>
+			    <tr>
+			    <td>mm</td>
+			    <td>millimeters</td>
+			    </tr>
+			  <tr>
+			    <td>in</td>
+			    <td>inches (1in = 96px = 2.54cm)</td>
+			  </tr>
+			  <tr>
+			    <td>px</td>
+			    <td>pixels (1px = 1/96th of 1in)</td>
+			  </tr>
+			  <tr>
+			    <td>pt</td>
+			    <td>points (1pt = 1/72 of 1in)</td>
+			  </tr>
+			  <tr>
+			    <td>pc</td>
+			    <td>picas (1pc = 12 pt)</td>
+			  </tr>
+			</table>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<h1 style="margin: 0.5in">This heading 1.</h1>
+					<h2 style="line-height: 3cm">This heading 2.</h2>
+					<h3 style="word-spacing: 4mm">This heading 3.</h3>
+					<h4 style="font-size: 12pt">This heading 4.</h4>
+					<h5 style="font-size: 1pc">This heading 5.</h5>
+					<h6 style="font-size: 12px">This heading 6.</h6>
+				</div>
+			</div>
+			<div class="highlight"><pre class="css"><code>h1 { margin: 0.5in; } /* inches  */
+h2 { line-height: 3cm; } /* centimeters */
+h3 { word-spacing: 4mm; } /* millimeters */
+h4 { font-size: 12pt; } /* points */
+h5 { font-size: 1pc; } /* picas */
+h6 { font-size: 12px; } /* px */</code></pre>
+			</div>
+			
+			<hr/>
+			<!--References-->
+			<h4>References</h4>
+			<ul>
+				<li> <a href="http://www.w3schools.com/css/css_selectors.asp">W3Schools</a> </li>
+				<li> <a href="https://msdn.microsoft.com/en-us/library/ms537660(v=vs.85).aspx">CSS Values and Units Reference</a></li>
+			</ul>
+		</div><!--col-md-12-->
+	</div><!--end of row-->
+</div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/ZeroClipboard.min.js"></script>
+<script>
+	 //Config ZeroClipboard
+	ZeroClipboard.config({
+		hoverClass: 'btn-clipboard-hover'
+	})
+
+	// Insert copy to clipboard button before .highlight
+	$('.highlight').each(function () {
+		var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>';
+		$(this).before(btnHtml)
+	});
+
+	var zeroClipboard = new ZeroClipboard($('.btn-clipboard'));
+	var htmlBridge = $('#global-zeroclipboard-html-bridge');
+
+	// Handlers for ZeroClipboard
+	zeroClipboard.on('ready', function (event) {
+		htmlBridge
+			.data('placement', 'top')
+			.attr('title', 'Copy to clipboard')
+			.tooltip();
+
+		// Copy to clipboard
+		zeroClipboard.on('copy', function (event) {
+			var highlight = $(event.target).parent().nextAll('.highlight').first();
+			event.clipboardData.setData("text/plain", highlight.text())
+		});
+
+		// Notify copy success and reset tooltip title
+		zeroClipboard.on('aftercopy', function () {
+			htmlBridge
+				.attr('title', 'Copied!')
+				.tooltip('fixTitle')
+				.tooltip('show')
+				.attr('title', 'Copy to clipboard')
+				.tooltip('fixTitle')
+		});
+	});
+
+	// Notify copy failure
+	zeroClipboard.on('error', function () {
+		ZeroClipboard.destroy();
+		htmlBridge
+			.attr('title', 'Flash required')
+			.tooltip('fixTitle')
+			.tooltip('show');
+	});
+</script>
+
+</body>
+</html>

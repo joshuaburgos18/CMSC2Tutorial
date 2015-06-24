@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CMSC 2 Introduction to Internet</title>	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/github-gist.css">
+	<style>
+		/*Example styles*/
+		#pseudo:link {
+			color: #FF0000;
+		}
+		
+		#pseudo:visited {
+			color: #00FF00;
+		}
+		
+		#pseudo:hover {
+			color: #FF00FF;
+		}
+		
+		#pseudo:active {
+			color: #0000FF;
+		}
+		
+		#pseudoelem1::first-line {
+			color: #FF0000;
+		}
+	</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1 id="title">
+					CMSC 2 <small>Introduction to Internet</small>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h2>Responsive Layout 1</h2>
+			Responsive web design is the practice of building a website suitable to work on every device and every screen size, no matter how large or small, mobile or desktop. 
+			
+			<hr/>
+			<!--Metadata-->
+			<h4>Metadata</h4>
+			Metadata is defined using the <code>&lt;meta&gt;</code> tag, which provides data about the HTML document. Metadata will not be displayed on the page. Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata. The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;head&gt;
+	&lt;title&gt;CMSC 2 Example&lt;/title&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Marie Betel de Robles&quot;&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;CSS Responsive Layout Tutorial&quot;&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;Responsive, CSS, Tutorial&quot;&gt;
+&lt;/head&gt;</code></pre>
+				</div>
+			</div>
+			
+			
+			<hr/>
+			<!--References-->
+			<h4>References</h4>
+			<ul>
+				<li><a href="http://www.w3schools.com/">W3Schools</a> </li>
+				<li><a href="http://learn.shayhowe.com/advanced-html-css/responsive-web-design/">Responsive Web Design</a></li>
+			</ul>
+		</div><!--col-md-12-->
+	</div><!--end of row-->
+</div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/ZeroClipboard.min.js"></script>
+<script>
+	 //Config ZeroClipboard
+	ZeroClipboard.config({
+		hoverClass: 'btn-clipboard-hover'
+	})
+
+	// Insert copy to clipboard button before .highlight
+	$('.highlight').each(function () {
+		var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>';
+		$(this).before(btnHtml)
+	});
+
+	var zeroClipboard = new ZeroClipboard($('.btn-clipboard'));
+	var htmlBridge = $('#global-zeroclipboard-html-bridge');
+
+	// Handlers for ZeroClipboard
+	zeroClipboard.on('ready', function (event) {
+		htmlBridge
+			.data('placement', 'top')
+			.attr('title', 'Copy to clipboard')
+			.tooltip();
+
+		// Copy to clipboard
+		zeroClipboard.on('copy', function (event) {
+			var highlight = $(event.target).parent().nextAll('.highlight').first();
+			event.clipboardData.setData("text/plain", highlight.text())
+		});
+
+		// Notify copy success and reset tooltip title
+		zeroClipboard.on('aftercopy', function () {
+			htmlBridge
+				.attr('title', 'Copied!')
+				.tooltip('fixTitle')
+				.tooltip('show')
+				.attr('title', 'Copy to clipboard')
+				.tooltip('fixTitle')
+		});
+	});
+
+	// Notify copy failure
+	zeroClipboard.on('error', function () {
+		ZeroClipboard.destroy();
+		htmlBridge
+			.attr('title', 'Flash required')
+			.tooltip('fixTitle')
+			.tooltip('show');
+	});
+</script>
+
+</body>
+</html>
