@@ -70,17 +70,21 @@
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;!DOCTYPE html&gt;
-&lt;head&gt;
-	&lt;title&gt;CMSC 2 Example&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;h1&gt;Hello World!&lt;/h1&gt;
-	&lt;h6&gt;How are you?&lt;/h6&gt;
-&lt;/body&gt;</code></pre>
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;CMSC 2 Example&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hello World!&lt;/h1&gt;
+		&lt;h6&gt;How are you?&lt;/h6&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
 			</div>
 			<div class="highlight"><pre class="css"><code>h1 {color: blue; text-align: center}</code></pre>
 			</div>
 			The example above sets the display of all <code>&lt;h1&gt;</code> tags in the web page. The color and alignment properties are modified to blue and center, repectively.
+			
+			<br/> <br/>
 			
 			<hr/>
 			<!--Ways to Insert CSS-->
@@ -92,11 +96,13 @@
 					<li>Inline Style</li>
 				</ul>
 			
-			<br/>
+			<br/> <br/>
+			
 			<h5>External Style Sheet</h5>
 			An external style sheet can be written in any text editor. The file should not contain any html tags, only the CSS rules. The style sheet file must be saved with a <strong>.css</strong> extension. With an external style sheet, you can design an entire website by changing just one file. 
 			
 			<br/><br/>
+			
 			To design an entire website using an external style sheet, each web page must include a reference to the external style sheet using the <code>&lt;link&gt;</code> element. The <code>&lt;link&gt;</code> element goes inside the <code>&lt;head&gt;</code> section. For example, <em>mystyle.css</em> is the name of the style sheet you want to use in your web page.
 			
 			<div class="panel panel-default">
@@ -111,6 +117,7 @@
 			The example above used a relative path to state the location of the style sheet which is inside a folder named <em>css</em>. The folder is located in the same location of the HTML web page.
 			
 			 <br/> <br/>
+			
 			<h5>Internal Style Sheet</h5>
 			Internal styles are defined within the <code>&lt;style&gt;</code> element, inside the <code>&lt;head&gt;</code> section of an HTML page. With an internal style sheet, you can design a single page.
 			
@@ -134,7 +141,8 @@
 &lt;/head&gt;</code></pre>
 			</div>
 			
-			<br/>
+			<br/> <br/>
+			
 			<h5>Inline Style</h5>
 			Inline styles are added using the <code>style</code> attribute to any HTML tag. An inline style may be used to apply a unique style for a single element. The <code>style</code> attribute can contain any CSS property.
 			
@@ -145,6 +153,8 @@
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;img src=&quot;/images/baby.jpg&quot; style=&quot;width:150px;height:100px;&quot;/&gt;</code></pre>
 			</div>
+			
+			<br/> <br/>
 			
 			<hr/>
 			<!--Multiple Style Sheets-->
@@ -173,6 +183,7 @@
 			Notice that the <code>color</code> property is specified in both the internal style sheet and inline style.
 			
 			<br/> <br/>
+			
 			If more than one style is specified in a web page, all the overlapping styles will override the other depending on the order and priority of style sheet:
 			<strong><ol>
 				<li>Inline style (inside an HTML element)</li>
@@ -182,6 +193,7 @@
 			Inline style has the highest priority, which means that from our example above, the color of the <code>&lt;h1&gt;</code> element will be blue. 
 			
 			<br/> <br/>
+			
 			Another scenario is when the link to the external style sheet is placed below the internal style sheet in the<code>&lt;head&gt;</code> section. From the order that they are placed in the HTML file, the external style sheet will override the internal style sheet.
 			
 			<div class="panel panel-default">
@@ -203,6 +215,8 @@
 			
 			In the example above, if the color of the <code>&lt;h1&gt;</code> element is both defined in <strong>mystyle.css</strong> and in the internal style sheet, the defined color in the external style sheet will be used.
 			
+			<br/> <br/>
+			
 			<hr/>
 			<!--CSS Comments-->
 			<h4>CSS Comments</h4>
@@ -211,6 +225,8 @@
 			<br/> <br/>
 			
 			<h6 style="color:red;font-weight:bold;">Note: In the examples provided below, CSS comments are used to describe the properties used to design the HTML content. Take time to read them.</h6>
+	
+			<br/> <br/>
 	
 			<hr/>
 			<!--Element Selectors-->
@@ -247,6 +263,8 @@ input {
 	font-size: 20px; /* Sets the font size of the element */
 }</code></pre>
 			</div>
+			
+			<br/> <br/>
 			
 			<hr/>
 			<!--ID Selectors-->
@@ -311,6 +329,8 @@ This is a list of colors:
 	list-style-type: upper-roman; /* (upper-roman lower-roman, lower-alpha or upper-alpha) */
 }</code></pre>
 			</div>
+			
+			<br/> <br/>
 			
 			<hr/>
 			<!--Class Selectors-->
@@ -394,12 +414,15 @@ p.text {
 }</code></pre>
 			</div>
 			
+			<br/> <br/>
+			
 			<hr/>
 			<!--Pseudo-class Selectors-->
 			<h4>Pseudo-class Selectors</h4>
 			A CSS pseudo-class is used to style a specified special state of the element. Pseudo-class selectors are CSS selectors with a colon (:) preceding them.
 			
 			<br/> <br/>
+			
 			<h5>Anchor Pseudo-classes</h5>
 			Links can be displayed depending on their current state.
 
@@ -438,6 +461,7 @@ a:active {
 			Note that a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective. a:active MUST come after a:hover in the CSS definition in order to be effective. Pseudo-class names are not case-sensitive.
 			
 			<br/> <br/>
+			
 			There are other various pseudo-classes that can be used to style a web page. Here is a list of the commonly used CSS pseudo-classes:
 			
 			<table class="table">
@@ -519,12 +543,15 @@ a:active {
 				</tr>
 			</table>
 			
+			<br/> <br/>
+			
 			<hr/>
 			<!--Pseudo-elements-->
 			<h4>Pseudo-elements</h4>
 			A CSS pseudo-element is used to style specified parts of an element. Pseudo-elements are CSS selectors with a double colon (::) preceding them. This was an attempt from <abbr title="World Wide Web Consortium">W3C</abbr> to distinguish between pseudo-classes and pseudo-elements.
 			
 			<br/> <br/>
+			
 			<h5>The <code>::first-line</code> Pseudo-element</h5>
 			The <code>::first-line</code> pseudo-element is used to add a special style to the first line of a text. The <code>::first-line</code> pseudo-element can only be applied to <strong>block</strong> elements.
 
@@ -580,6 +607,7 @@ This is a paragraph. A very very long paragraph to give you an example of what p
 			  </tr>
 			</table>
 			
+			<br/> <br/>
 			
 			<hr/>
 			<!--References-->

@@ -8,24 +8,80 @@
 	<link rel="stylesheet" href="../css/github-gist.css">
 	<style>
 		/*Example styles*/
-		#pseudo:link {
-			color: #FF0000;
+		.row, .column1 {
+		    box-sizing: border-box;
+		}
+		.row:before, .row:after {
+		    content: " ";
+		    display: table;
+		}
+		.row:after {
+		    clear: both;
+		}
+		.column1 {
+		    position: relative;
+		    float: left;
+		    display: block;
+		}
+		.column1 + .column1 {
+		    margin-left: 1.6%;
+		}
+		.column-1 {
+		    width: 6.86666666667%;
+		}
+		.column-2 {
+		    width: 15.3333333333%;
+		}
+		.column-3 {
+		    width: 23.8%;
+		}
+		.column-4 {
+		    width: 32.2666666667%;
+		}
+		.column-5 {
+		    width: 40.7333333333%;
+		}
+		.column-6 {
+		    width: 49.2%;
+		}
+		.column-7 {
+		    width: 57.6666666667%;
+		}
+		.column-8 {
+		    width: 66.1333333333%;
+		}
+		.column-9 {
+		    width: 74.6%;
+		}
+		.column-10 {
+		    width: 83.0666666667%;
+		}
+		.column-11 {
+		    width: 91.5333333333%;
+		}
+		.column-12 {
+		    width: 100%;
+		    margin-left: 0;
 		}
 		
-		#pseudo:visited {
-			color: #00FF00;
+		.column1 {
+			border: 1px solid black;
+			height: 300px;
+			text-align: center;
+		}
+		.row {
+			margin-bottom: 10px;
 		}
 		
-		#pseudo:hover {
-			color: #FF00FF;
+		p.resize {
+			background-color: lightgreen;
 		}
 		
-		#pseudo:active {
-			color: #0000FF;
-		}
-		
-		#pseudoelem1::first-line {
-			color: #FF0000;
+		@media (max-width: 700px) {
+			p.resize {
+				background-color: lightblue;
+				font-size: 0.7em;
+			}
 		}
 	</style>
 </head>
@@ -44,33 +100,580 @@
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h2>Responsive Layout 1</h2>
-			Responsive web design is the practice of building a website suitable to work on every device and every screen size, no matter how large or small, mobile or desktop. 
+			Your file for this exercise should be saved in the public folder and should be accessed using this link: <strong>"/css-exercises/responsive-layout-1.html"</strong>. Include all the CSS rules using an <strong>external style sheet</strong> named that should be accessed using this link: <strong>"/css/responsive-layout-1.css"</strong>.
+			
+			<br/> <br/>
+			
+			Responsive web design is the practice of building a website suitable to work on every device and every screen size, no matter how large or small, mobile or desktop.
 			
 			<hr/>
 			<!--Metadata-->
 			<h4>Metadata</h4>
-			Metadata is defined using the <code>&lt;meta&gt;</code> tag, which provides data about the HTML document. Metadata will not be displayed on the page. Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata. The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services.
+			Metadata is defined using the <code>&lt;meta&gt;</code> tag, which provides data about the HTML document. Metadata will not be displayed on the page. Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata. Metadata is always passed as name and value pairs using <code>name</code> and <code>content</code> attribute respectively.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Example</h3>
 				</div>
-				<div class="highlight"><pre class="html"><code>&lt;head&gt;
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;head&gt;
 	&lt;title&gt;CMSC 2 Example&lt;/title&gt;
 	&lt;meta name=&quot;author&quot; content=&quot;Marie Betel de Robles&quot;&gt;
 	&lt;meta name=&quot;description&quot; content=&quot;CSS Responsive Layout Tutorial&quot;&gt;
 	&lt;meta name=&quot;keywords&quot; content=&quot;Responsive, CSS, Tutorial&quot;&gt;
 &lt;/head&gt;</code></pre>
-				</div>
 			</div>
 			
+			<br/> <br/>
+			
+			A <code>meta</code> tag can be used for responsive layouts using <code>viewport</code>. A meta viewport tag gives the browser instructions on how to control the page's dimensions and scaling.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=320&quot;&gt;</code></pre>
+			</div>
+			The example above tells the page to match a 320px screen.
+			
+			<br/> <br/>
+			
+			There are several attributes that can be used in viewport:
+			
+			<table class="table">
+				<tr>
+					<th>Property</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>width</td>
+					<td>The width of the virtual viewport of the device. </td>
+				</tr>
+				<tr>
+					<td>device-width</td>
+					<td>The physical width of the device's screen.</td>
+				</tr>
+				<tr>
+					<td>height</td>
+					<td>The  height of the "<em>virtual viewport</em>" of the device.</td>
+				</tr>
+				<tr>
+					<td>device-height</td>
+					<td>The  physical height of the device's screen.</td>
+				</tr>
+				<tr>
+					<td>initial-scale</td>
+					<td>The initial zoom when visiting the page. 1.0 does not zoom.</td>
+				</tr>
+				<tr>
+					<td>minimum-scale</td>
+					<td>The minimum amount the visitor can zoom on the page. 1.0 does not zoom.</td>
+				</tr>
+				<tr>
+					<td>maximum-scale</td>
+					<td>The maximum amount the visitor can zoom on the page. 1.0 does not zoom.</td>
+				</tr>
+				<tr>
+					<td>user-scalable</td>
+					<td>Allows the device to zoom in and out. Values are yes or no.</td>
+				</tr>
+			</table>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre>
+			</div>
+			The example above uses the value <code>width=device-width</code> which tells the page to match the screen’s width in device independent pixels. This allows the page to reflow content to match different screen sizes, whether rendered on a small mobile phone or a large desktop monitor. Adding <code>initial-scale=1</code> instructs browsers to establish a 1:1 relationship between CSS pixels and device independent pixels regardless of device orientation, and allows the page to take advantage of the full landscape width.
+			
+			<br/> <br/>
+			
+			<img src="/images/meta.png" style="width:60%;margin: 0 auto;" alt="Meta Viewport" />
+			
+			<br/> <br/>
+			
+			<hr/>
+			<!--Box-Sizing-->
+			<h4>Box-Sizing</h4>
+			The <code>box-sizing</code> property can make building CSS layouts easier and a lot more intuitive. This property allows us to include the padding and border in an element's total width and height.
+			
+			<br/> <br/>
+			
+			The width and height of any element on a webpage is governed by the CSS box model. Since the dawn of CSS, the box model has worked like this by default: <br/> <br/>
+			
+			<p style="text-indent:20px;line-height:3px;"><code>padding</code> + <code>border</code> + <code>width</code> = actual width of an element </p>
+			<p style="text-indent:20px;"><code>padding</code> + <code>border</code> + <code>height</code> = actual height of an element </p>
+			
+			
+			The width and height of an element often appear bigger than what you have set because the element's border and padding are added to the element's specified width and height.
+			
+			<br/>
+			
+			<img style="width:80%;margin: 0 auto;" src="/images/box-model-illustration.png" alt="Box Model Illustration" />
+			
+			<br/>
+			
+			The image above shows that the set width is 158px, however the actual rendered size will be larger because of the additional left and right padding of 20px and left and right border width of 1px. As a result, calculating a desired width on the page involves subtracting padding and border from the width property.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<div style="width:158px;height:158px;border:1px solid blue;" class="div1">This is div1.</div>
+					<div style="width:158px;height:158px;padding: 0 20px;border:1px solid red;box-sizing:content-box;" class="div2">This is div2.</div>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;div class=&quot;div1&quot;&gt;This is div1.&lt;/div&gt;
+&lt;div class=&quot;div2&quot;&gt;This is div2.&lt;/div&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>.div1 {
+    width: 158px;
+    height: 158px;
+    border: 1px solid blue;
+}
+
+.div2 {
+    width: 158px;
+    height: 158px;
+    padding: 0px 20px;
+    border: 1px solid red;
+}</code></pre>
+			</div>
+			
+			<br/> <br/>
+			
+			A better method that achieves the same result is the use of the <code>box-sizing</code> property. Its default value is the <code>content-box</code> while the value <code>border-box</code> calculates the width by including padding and border. With the <code>border-box</code> value, any padding or border that’s applied will not be added to the rendered width. Instead, it will automatically subtract from the space that’s available in the content area. This results in code that is far more readable.
+			
+			<br/>
+			
+			<img style="width:80%;margin: 0 auto;" src="/images/box-sizing-illustration.png" alt="Box Sizing Illustration" />
+			
+			<br/>
+			
+			Now using same HTML content, <strong>TRY</strong> to add the CSS declaration <code>box-sizing: border-box;</code> in the <code>.div2</code> selector to see the difference.
+			
+			<br/> <br/>
+			
+			Many browsers already use <code>box-sizing: border-box;</code> for many form elements. Applying this to <strong>all</strong> elements is safe and wise.
+			
+			<div class="highlight"><pre class="css"><code>* {
+    box-sizing: border-box;
+}</code></pre>
+			</div>
+			
+			<br/> <br/>
+			
+			<hr/>
+			<!--Grid System-->
+			<h4>Grid System</h4>
+			A grid system is a structure that allows for content to be stacked both vertically and horizontally in a consistent and easily manageable fashion.Grid systems include two key components: <strong>rows and columns</strong>. Rows are used to accommodate the columns. Columns make up the final structure and contain the actual content.
+			
+			<img src="/images/grid-system.png" style="width:50%;margin: 0 auto;" alt="Grid System" />
+			
+			
+			<br/> <br/>
+			
+			To be able to create a grid system, first, it is important to reset the box model. By default, the padding and border values are not included in the declared height and width of an element.
+			
+			<div class="highlight"><pre class="css"><code>/*This applies to all tags with a class of row and column*/
+.row, .column {
+	box-sizing: box-border;
+}</code></pre>
+			</div>
+			
+			<br/> <br/>
+			
+			Next step is to align the columns horizontally, you need to <code>clear</code> the floating elements on the row to maintain the structure of the layout.
+			
+			<div class="highlight"><pre class="css"><code>.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+ 
+.row:after {
+    clear: both;
+}</code></pre>
+			</div>
+			
+			<br/> <br/>
+			
+			Then, columns are given a relative position to allow any absolutely position content within the column to be positioned relative to that column. The column is then floated left for horizontal alignment, which will cause the element to become <code>display: block</code> even if it did not start out that way.
+			
+			<div class="highlight"><pre class="css"><code>.column {
+    position: relative;
+    float: left;
+}</code></pre>
+			</div>
+			
+			<br/> <br/>
+			
+			A gutter between the columns should also be included. Gutters help create separation between columns for greater legibility and aesthetics.
+			
+			<div class="highlight"><pre class="css"><code>/*This will set a left margin for every column except the first one*/
+.column + .column {
+    margin-left: 1.6%;
+}</code></pre>
+			</div>
+			
+			<br/> <br/>
+			
+			Lastly, we calculate the width of the columns. Before we can calculate, we need to specify your desired maximum number of columns in a row. For our example, let's set it to 12. Now, it’s important to understand that by going with a maximum of 12 columns per row, you need to fulfill that amount for every row regardless of how many columns you want. For example, if you wanted only a row of 3 equal columns, you would use 3 elements that each span 4 columns (4×3=12). Exceeding the sum of 12 will result in the extra column(s) wrapping to a new line.
+			
+			<br/> <br/>
+			
+			Now that we know the maximum number of columns, next we need to determine the width of a single (1/12) column using the following formula:
+			
+			<p style="text-indent: 20px;">scw = (100 – (m * (mc – 1))) / mc, where:
+				<ul>
+					<li><strong>scw</strong> = single column width</li>
+					<li><strong>m</strong> = margin (1.6%)</li>
+					<li><strong>mc</strong> = maximum columns (12)</li>
+				</ul>
+			</p>
+			
+			When we plug in the numbers, we get a single column width of 6.86666666667%. From here we can use this number to calculate the rest of the column widths. The formula for this is:
+			
+			<p style="text-indent: 20px;">cw = (scw * cs) + (m * (cs – 1)), where:
+				<ul>
+					<li><strong>cw</strong> = column width</li>
+					<li><strong>scw</strong> = single column width (6.86666666667%)</li>
+					<li><strong>cs</strong> = column span (1-12)</li>
+					<li><strong>m</strong> = margin (1.6%)</li>
+				</ul>
+			</p>
+			
+			Applying this formula for each of the 12 columns results in the following:
+			
+			<div class="highlight"><pre class="css"><code>.column-1 {
+    width: 6.86666666667%;
+}
+ 
+.column-2 {
+    width: 15.3333333333%;
+}
+ 
+.column-3 {
+    width: 23.8%;
+}
+ 
+.column-4 {
+    width: 32.2666666667%;
+}
+ 
+.column-5 {
+    width: 40.7333333333%;
+}
+ 
+.column-6 {
+    width: 49.2%;
+}
+ 
+.column-7 {
+    width: 57.6666666667%;
+}
+ 
+.column-8 {
+    width: 66.1333333333%;
+}
+ 
+.column-9 {
+    width: 74.6%;
+}
+ 
+.column-10 {
+    width: 83.0666666667%;
+}
+ 
+.column-11 {
+    width: 91.5333333333%;
+}
+ 
+.column-12 {
+    width: 100%;
+}</code></pre>
+			</div>
+			
+			<br/> <br/>
+			
+			Now, we can apply everything to the HTML content:
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+					    <div class="column1 column-12">
+					    		Web page title and logo should be here
+					    </div>
+					</div>
+					<div class="row">
+					    <div class="column1 column-3">
+					    		Links (Navigation) should be here
+					    </div>
+					    <div class="column1 column-9">
+					    		Main Content should be here
+					    </div>
+					</div>
+					
+					<div class="row">
+					    <div class="column1 column-4">
+					    		Latest news should be here
+					    </div>
+					    <div class="column1 column-4">
+					    		Latest news should be here
+					    </div>
+					    <div class="column1 column-4">
+					    		Latest news should be here
+					    </div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;column column-12&quot;&gt;
+	Web page title and logo should be here
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;column column-3&quot;&gt;
+		Links (Navigation&gt; should be here
+	&lt;/div&gt;
+	&lt;div class=&quot;column column-9&quot;&gt;
+		Main Content should be here
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;column column-4&quot;&gt;
+		Latest news should be here
+	&lt;/div&gt;
+	&lt;div class=&quot;column column-4&quot;&gt;
+		Latest news should be here
+	&lt;/div&gt;
+	&lt;div class=&quot;column column-4&quot;&gt;
+		Latest news should be here
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>.row, .column {
+    box-sizing: border-box;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.column {
+    position: relative;
+    float: left;
+    display: block;
+}
+
+.column + .column {
+    margin-left: 1.6%;
+}
+
+.column-1 {
+    width: 6.86666666667%;
+}
+
+.column-2 {
+    width: 15.3333333333%;
+}
+
+.column-3 {
+    width: 23.8%;
+}
+
+.column-4 {
+    width: 32.2666666667%;
+}
+
+.column-5 {
+    width: 40.7333333333%;
+}
+
+.column-6 {
+    width: 49.2%;
+}
+
+.column-7 {
+    width: 57.6666666667%;
+}
+
+.column-8 {
+    width: 66.1333333333%;
+}
+
+.column-9 {
+    width: 74.6%;
+}
+
+.column-10 {
+    width: 83.0666666667%;
+}
+
+.column-11 {
+    width: 91.5333333333%;
+}
+
+.column-12 {
+    width: 100%;
+    margin-left: 0;
+}
+
+/*For grid visibility purposes*/
+.column {
+	border: 1px solid black;
+	height: 300px;
+	text-aign: center;
+}
+.row {
+	margin-bottom: 10px;
+}</code></pre>
+			</div>
+			The examble above is just one way of making using of  a 12-column grid system. There are a lot of combinations that you can do as long as it sums up to the maximum number of columns you specified.
+			
+			
+			<hr/>
+			<!--Media Query-->
+			<h4>Media Query</h4>
+			Media queries are simple filters that can be applied to CSS styles. They make it easy to change styles based on the characteristics of the device rendering the content, including the display type, width, height, orientation and even resolution.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<p class="resize">TRY TO RESIZE THE WINDOW!</p>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;p class=&quot;resize&quot;&gt;
+	TRY TO RESIZE THE WINDOW!
+&lt;/p&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>@media (max-width: 700px) {
+	.resize {
+		background-color: lightblue;
+		font-size: 0.7em;
+	}
+}</code></pre>
+			</div>
+			
+			The example above modifies the design of the <code>p</code> element. When its width is less than 700 pixels, the background-color is <strong>lightblue</strong>, otherwise it is <strong>lightgreen</strong>. Moreover, the font-size is adjusted. When a media query is true, the corresponding style sheet or style rules are applied, following the normal cascading rules.
+			
+			<br/> <br/>
+			
+			The <code>max-width</code> feature is just of the several features that can be used in a media query. Here are some common features that you can also use:
+			
+			<table class="table">
+			  <tr>
+			    <th style="width:25%">Value</th>
+			    <th>Description</th>
+			  </tr>  
+			    <tr>
+			    <td>aspect-ratio</td>
+			    <td>Specifies the ratio between the width and the height of the display area</td>
+			    </tr>
+				<tr>
+			    <td>color</td>
+			    <td>Specifies the number of bits per color component for the output device</td>
+			    </tr>
+				<tr>
+			    <td>device-height</td>
+			    <td>Specifies the height of the device, such as a computer screen</td>
+			    </tr>
+				<tr>
+			    <td>device-width</td>
+			    <td>Specifies the width of the device, such as a computer screen</td>
+			    </tr>
+				<tr>
+			    <td>grid</td>
+			    <td>Specifies whether the device is a grid device or not</td>
+			    </tr>
+				<tr>
+			    <td>height</td>
+			    <td>Specifies the height of the display area, such as a browser window</td>
+			    </tr>
+				<tr>
+			    <td>max-height</td>
+			    <td>Specifies the maximum height of the display area, such as a browser 
+				window</td>
+			    </tr>
+				<tr>
+			    <td>max-resolution</td>
+			    <td>Specifies the maximum resolution of the device, using dpi or dpcm</td>
+			    </tr>
+				<tr>
+			    <td>max-width</td>
+			    <td>Specifies the maximum width of the display area, such as a browser 
+				window</td>
+			    </tr>
+				<tr>
+			    <td>min-height</td>
+			    <td>Specifies the minimum height of the display area, such as a browser 
+				window</td>
+			    </tr>
+				<tr>
+			    <td>min-resolution</td>
+			    <td>Specifies the minimum resolution of the device, using dpi or dpcm</td>
+			    </tr>
+				<tr>
+			    <td>min-width</td>
+			    <td>Specifies the minimum width of the display area, such as a browser 
+				window</td>
+			    </tr>
+				<tr>
+			    <td>orientation</td>
+			    <td>Specifies the whether the display is in landscape mode or portrait mode</td>
+			    </tr>
+				<tr>
+			    <td>resolution</td>
+			    <td>Specifies the resolution of the device, using dpi or dpcm</td>
+			    </tr>
+				<tr>
+			    <td>width</td>
+			    <td>Specifies the width of the display area, such as a browser window</td>
+			    </tr>
+			</table>
+			
+			<br/> <br/>
+			
+			Media queries can also be included in the <code>link</code> tag.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;!--When the browser is between 0px and 640px wide, max-640px.css will be applied.--&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 640px)&quot; href=&quot;max-640px.css&quot;&gt;
+&lt;!--When the browser is 640px or wider, min-640px.css will be applied.--&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;(min-width: 640px)&quot; href=&quot;min-640px.css&quot;&gt;
+&lt;!--When the browser height is greater than the width, portrait.css will be applied.--&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;(orientation: portrait)&quot; href=&quot;portrait.css&quot;&gt;
+&lt;!--When the browser width is greater than the height, landscape.css will be applied.--&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;(orientation: landscape)&quot; href=&quot;landscape.css&quot;&gt;</code></pre>
+			</div>
 			
 			<hr/>
 			<!--References-->
 			<h4>References</h4>
 			<ul>
 				<li><a href="http://www.w3schools.com/">W3Schools</a> </li>
-				<li><a href="http://learn.shayhowe.com/advanced-html-css/responsive-web-design/">Responsive Web Design</a></li>
+				<li><a href="https://developers.google.com/web/fundamentals/layouts/rwd-fundamentals/set-the-viewport">Set the Viewport</a></li>
+				<li><a href="https://css-tricks.com/box-sizing/">CSS Tricks: Box Sizing</a></li>
+				<li><a href="http://www.sitepoint.com/understanding-css-grid-systems/">Understanding CSS Grid Systems from the Ground Up</a></li>
 			</ul>
 		</div><!--col-md-12-->
 	</div><!--end of row-->
