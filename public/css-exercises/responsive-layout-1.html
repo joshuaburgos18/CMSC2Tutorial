@@ -11,7 +11,7 @@
 		.row, .column1 {
 		    box-sizing: border-box;
 		}
-		.row:before, .row:after {
+		.row::before, .row::after {
 		    content: " ";
 		    display: table;
 		}
@@ -19,7 +19,6 @@
 		    clear: both;
 		}
 		.column1 {
-		    padding: 10px;
 		    position: relative;
 		    float: left;
 		    display: block;
@@ -70,6 +69,10 @@
 				background-color: lightblue;
 				font-size: 0.7em;
 			}
+		}
+		/* For mobile phones: */
+		[class*="col-"] {
+			width: 100%;
 		}
 		@media (min-width: 600px) {
 		    /* For Tablets: */
@@ -314,12 +317,12 @@
 			
 			Next step is to align the columns horizontally, you need to <code>clear</code> the floating elements on the row to maintain the structure of the layout.
 			
-			<div class="highlight"><pre class="css"><code>.row:before, .row:after {
+			<div class="highlight"><pre class="css"><code>.row::before, .row::after {
     content: " ";
     display: table;
 }
  
-.row:after {
+.row::after {
     clear: both;
 }</code></pre>
 			</div>
@@ -415,12 +418,12 @@
     box-sizing: border-box;
 }
 
-.row:before, .row:after {
+.row::before, .row::after {
     content: " ";
     display: table;
 }
 
-.row:after {
+.row::after {
     clear: both;
 }
 
@@ -654,12 +657,12 @@
     box-sizing: border-box;
 }
 
-.row:before, .row:after {
+.row::before, .row::after {
     content: " ";
     display: table;
 }
 
-.row:after {
+.row::after {
     clear: both;
 }
 
