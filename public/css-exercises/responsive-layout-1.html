@@ -19,69 +19,87 @@
 		    clear: both;
 		}
 		.column1 {
+		    padding: 10px;
 		    position: relative;
 		    float: left;
 		    display: block;
 		}
-		.column1 + .column1 {
-		    margin-left: 1.6%;
+		.column-1 {width: 8.33%;}
+		.column-2 {width: 16.66%;}
+		.column-3 {width: 25%;}
+		.column-4 {width: 33.33%;}
+		.column-5 {width: 41.66%;}
+		.column-6 {width: 50%;}
+		.column-7 {width: 58.33%;}
+		.column-8 {width: 66.66%;}
+		.column-9 {width: 75%;}
+		.column-10 {width: 83.33%;}
+		.column-11 {width: 91.66%;}
+		.column-12 {width: 100%;}
+		.column1 {padding: 10px;}
 		}
-		.column-1 {
-		    width: 6.86666666667%;
+		.row {margin-bottom: 10px;}
+		.header {
+		    background-color: #f6a2ad;
+		    color: #ffffff;
+		    text-align: center;
 		}
-		.column-2 {
-		    width: 15.3333333333%;
+		.menu ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
 		}
-		.column-3 {
-		    width: 23.8%;
+		.menu li {
+		    padding: 8px;
+		    margin-bottom: 7px;
+		    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 		}
-		.column-4 {
-		    width: 32.2666666667%;
+		.menu li:hover {
+		    background-color: #f6a2ad;
+		    color: #ffffff;
 		}
-		.column-5 {
-		    width: 40.7333333333%;
-		}
-		.column-6 {
-		    width: 49.2%;
-		}
-		.column-7 {
-		    width: 57.6666666667%;
-		}
-		.column-8 {
-		    width: 66.1333333333%;
-		}
-		.column-9 {
-		    width: 74.6%;
-		}
-		.column-10 {
-		    width: 83.0666666667%;
-		}
-		.column-11 {
-		    width: 91.5333333333%;
-		}
-		.column-12 {
-		    width: 100%;
-		    margin-left: 0;
-		}
-		
-		.column1 {
-			border: 1px solid black;
-			height: 300px;
+		.main-content h2 {
+			color: #eb7077;
 			text-align: center;
 		}
-		.row {
-			margin-bottom: 10px;
-		}
-		
 		p.resize {
 			background-color: lightgreen;
 		}
-		
 		@media (max-width: 700px) {
 			p.resize {
 				background-color: lightblue;
 				font-size: 0.7em;
 			}
+		}
+		@media (min-width: 600px) {
+		    /* For Tablets: */
+		    .col-m-1 {width: 8.33%;}
+		    .col-m-2 {width: 16.66%;}
+		    .col-m-3 {width: 25%;}
+		    .col-m-4 {width: 33.33%;}
+		    .col-m-5 {width: 41.66%;}
+		    .col-m-6 {width: 50%;}
+		    .col-m-7 {width: 58.33%;}
+		    .col-m-8 {width: 66.66%;}
+		    .col-m-9 {width: 75%;}
+		    .col-m-10 {width: 83.33%;}
+		    .col-m-11 {width: 91.66%;}
+		    .col-m-12 {width: 100%;}
+		}
+		@media (min-width: 768px) {
+			/*For Desktop*/
+			.col-1 {width: 8.33%;}
+			.col-2 {width: 16.66%;}
+			.col-3 {width: 25%;}
+			.col-4 {width: 33.33%;}
+			.col-5 {width: 41.66%;}
+			.col-6 {width: 50%;}
+			.col-7 {width: 58.33%;}
+			.col-8 {width: 66.66%;}
+			.col-9 {width: 75%;}
+			.col-10 {width: 83.33%;}
+			.col-11 {width: 91.66%;}
+			.col-12 {width: 100%;}
 		}
 	</style>
 </head>
@@ -126,7 +144,7 @@
 			
 			<br/> <br/>
 			
-			A <code>meta</code> tag can be used for responsive layouts using <code>viewport</code>. A meta viewport tag gives the browser instructions on how to control the page's dimensions and scaling.
+			A <code>meta</code> tag can be used for responsive layouts using <code>viewport</code>. The viewport is the user's visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -135,7 +153,7 @@
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=320&quot;&gt;</code></pre>
 			</div>
-			The example above tells the page to match a 320px screen.
+			The <code>width=320px</code> part sets the width of the page to match a 320px screen.
 			
 			<br/> <br/>
 			
@@ -187,9 +205,13 @@
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre>
 			</div>
-			The example above uses the value <code>width=device-width</code> which tells the page to match the screen’s width in device independent pixels. This allows the page to reflow content to match different screen sizes, whether rendered on a small mobile phone or a large desktop monitor. Adding <code>initial-scale=1</code> instructs browsers to establish a 1:1 relationship between CSS pixels and device independent pixels regardless of device orientation, and allows the page to take advantage of the full landscape width.
+			The example above uses <code>width=device-width</code> which sets the width of the page to follow the screen-width of the device (which will vary depending on the device). This allows the page to reflow content to match different screen sizes, whether rendered on a small mobile phone or a large desktop monitor. Adding <code>initial-scale=1</code> sets the initial zoom level when the page is first loaded by the browser. This allows the page to take advantage of the full landscape width.
 			
 			<br/> <br/>
+			
+			The image below shows a web page without the viewport meta tag, and the same web page with the viewport meta tag.
+			
+			<br/>
 			
 			<img src="/images/meta.png" style="width:60%;margin: 0 auto;" alt="Meta Viewport" />
 			
@@ -216,7 +238,7 @@
 			
 			<br/>
 			
-			The image above shows that the set width is 158px, however the actual rendered size will be larger because of the additional left and right padding of 20px and left and right border width of 1px. As a result, calculating a desired width on the page involves subtracting padding and border from the width property.
+			The image above shows that the set <code>width</code> is 158px, however the actual rendered size will be larger because of the additional <code>padding-left</code> and <code>padding-right</code> of 20px and left and right <code>border-width</code> of 1px. As a result, calculating a desired width on the page involves subtracting padding and border from the width property.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -246,7 +268,7 @@
 			
 			<br/> <br/>
 			
-			A better method that achieves the same result is the use of the <code>box-sizing</code> property. Its default value is the <code>content-box</code> while the value <code>border-box</code> calculates the width by including padding and border. With the <code>border-box</code> value, any padding or border that’s applied will not be added to the rendered width. Instead, it will automatically subtract from the space that’s available in the content area. This results in code that is far more readable.
+			A better method that achieves the same result is the use of the <code>box-sizing</code> property. Its value <code>border-box</code> calculates the width by including padding and border. With the <code>border-box</code> value, any padding or border that’s applied will not be added to the rendered width. Instead, it will automatically subtract from the space that’s available in the content area. This results in code that is far more readable.
 			
 			<br/>
 			
@@ -270,17 +292,20 @@
 			<hr/>
 			<!--Grid System-->
 			<h4>Grid System</h4>
-			A grid system is a structure that allows for content to be stacked both vertically and horizontally in a consistent and easily manageable fashion.Grid systems include two key components: <strong>rows and columns</strong>. Rows are used to accommodate the columns. Columns make up the final structure and contain the actual content.
+			A grid system is a structure that allows for content to be stacked both vertically and horizontally in a consistent and easily manageable fashion. Using grid system is very helpful when designing web pages. It makes it easier to place elements on the page.
 			
-			<img src="/images/grid-system.png" style="width:50%;margin: 0 auto;" alt="Grid System" />
+			<br/> <br/>
+			
+			Grid systems include two key components: <strong>rows and columns</strong>. Rows are used to accommodate the columns. Columns make up the final structure and contain the actual content.
+			
+			<img src="/images/grid-system.png" style="width:70%;margin: 0 auto;" alt="Grid System" />
 			
 			
 			<br/> <br/>
 			
-			To be able to create a grid system, first, it is important to reset the box model. By default, the padding and border values are not included in the declared height and width of an element.
+			To be able to create a grid system, first, it is important to reset the box model. By default, the padding and border values are not included in the declared height and width of an element so we need to ensure that all HTML elements have the <code>box-sizing</code> property set to <code>border-box</code>.
 			
-			<div class="highlight"><pre class="css"><code>/*This applies to all tags with a class of row and column*/
-.row, .column {
+			<div class="highlight"><pre class="css"><code>.row, .column {
 	box-sizing: box-border;
 }</code></pre>
 			</div>
@@ -311,90 +336,24 @@
 			
 			<br/> <br/>
 			
-			A gutter between the columns should also be included. Gutters help create separation between columns for greater legibility and aesthetics.
-			
-			<div class="highlight"><pre class="css"><code>/*This will set a left margin for every column except the first one*/
-.column + .column {
-    margin-left: 1.6%;
-}</code></pre>
-			</div>
+			Lastly, we calculate the width of the columns. Before we can calculate, we need to specify your desired maximum number of columns in a row. For our example, let's set it to <strong>12</strong>. By specifying a maximum of 12 columns per row, you need to fulfill that amount for every row regardless of how many columns you want. For example, if you wanted only a row of 3 equal columns, you would use 3 elements that each span 4 columns (4×3=12). Exceeding the sum of 12 will result in the extra column(s) wrapping to a new line.
 			
 			<br/> <br/>
 			
-			Lastly, we calculate the width of the columns. Before we can calculate, we need to specify your desired maximum number of columns in a row. For our example, let's set it to 12. Now, it’s important to understand that by going with a maximum of 12 columns per row, you need to fulfill that amount for every row regardless of how many columns you want. For example, if you wanted only a row of 3 equal columns, you would use 3 elements that each span 4 columns (4×3=12). Exceeding the sum of 12 will result in the extra column(s) wrapping to a new line.
+			Now that we know the maximum number of columns, next we calculate the percentage for one column: <strong>100% / 12 columns = 8.33%</strong>. Applying this formula for each of the 12 columns results in the following:
 			
-			<br/> <br/>
-			
-			Now that we know the maximum number of columns, next we need to determine the width of a single (1/12) column using the following formula:
-			
-			<p style="text-indent: 20px;">scw = (100 – (m * (mc – 1))) / mc, where:
-				<ul>
-					<li><strong>scw</strong> = single column width</li>
-					<li><strong>m</strong> = margin (1.6%)</li>
-					<li><strong>mc</strong> = maximum columns (12)</li>
-				</ul>
-			</p>
-			
-			When we plug in the numbers, we get a single column width of 6.86666666667%. From here we can use this number to calculate the rest of the column widths. The formula for this is:
-			
-			<p style="text-indent: 20px;">cw = (scw * cs) + (m * (cs – 1)), where:
-				<ul>
-					<li><strong>cw</strong> = column width</li>
-					<li><strong>scw</strong> = single column width (6.86666666667%)</li>
-					<li><strong>cs</strong> = column span (1-12)</li>
-					<li><strong>m</strong> = margin (1.6%)</li>
-				</ul>
-			</p>
-			
-			Applying this formula for each of the 12 columns results in the following:
-			
-			<div class="highlight"><pre class="css"><code>.column-1 {
-    width: 6.86666666667%;
-}
- 
-.column-2 {
-    width: 15.3333333333%;
-}
- 
-.column-3 {
-    width: 23.8%;
-}
- 
-.column-4 {
-    width: 32.2666666667%;
-}
- 
-.column-5 {
-    width: 40.7333333333%;
-}
- 
-.column-6 {
-    width: 49.2%;
-}
- 
-.column-7 {
-    width: 57.6666666667%;
-}
- 
-.column-8 {
-    width: 66.1333333333%;
-}
- 
-.column-9 {
-    width: 74.6%;
-}
- 
-.column-10 {
-    width: 83.0666666667%;
-}
- 
-.column-11 {
-    width: 91.5333333333%;
-}
- 
-.column-12 {
-    width: 100%;
-}</code></pre>
+			<div class="highlight"><pre class="css"><code>.column-1 {width: 8.33%;}
+.column-2 {width: 16.66%;}
+.column-3 {width: 25%;}
+.column-4 {width: 33.33%;}
+.column-5 {width: 41.66%;}
+.column-6 {width: 50%;}
+.column-7 {width: 58.33%;}
+.column-8 {width: 66.66%;}
+.column-9 {width: 75%;}
+.column-10 {width: 83.33%;}
+.column-11 {width: 91.66%;}
+.column-12 {width: 100%;}</code></pre>
 			</div>
 			
 			<br/> <br/>
@@ -406,57 +365,49 @@
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<div class="row">
+					<div class="row header">
 					    <div class="column1 column-12">
-					    		Web page title and logo should be here
+					    		<h1>Title and Logo</h1>
 					    </div>
 					</div>
-					<div class="row">
+					<div class="row menu">
 					    <div class="column1 column-3">
-					    		Links (Navigation) should be here
+					    		<ul>
+								<li>Menu 1</li>
+								<li>Menu 2</li>
+								<li>Menu 3</li>
+								<li>Menu 4</li>
+							</ul>
 					    </div>
-					    <div class="column1 column-9">
-					    		Main Content should be here
-					    </div>
-					</div>
-					
-					<div class="row">
-					    <div class="column1 column-4">
-					    		Latest news should be here
-					    </div>
-					    <div class="column1 column-4">
-					    		Latest news should be here
-					    </div>
-					    <div class="column1 column-4">
-					    		Latest news should be here
+					    <div class="column1 column-9 main-content">
+					    		<h2>Menu 1</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					    </div>
 					</div>
 				</div>
 			</div>
-			<div class="highlight"><pre class="html"><code>&lt;div class=&quot;row&quot;&gt;
+			<div class="highlight"><pre class="html"><code>&lt;!--The first row consists of 1 column occupying 100% of the width--&gt;
+&lt;div class=&quot;row header&quot;&gt;
 	&lt;div class=&quot;column column-12&quot;&gt;
-	Web page title and logo should be here
+		&lt;h1&gt;Title and Logo&lt;/h1&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;row&quot;&gt;
+&lt;!--The second row consists of 2 columns occupying 25% and 75% of the width, respectively--&gt;
+&lt;div class=&quot;row menu&quot;&gt;
 	&lt;div class=&quot;column column-3&quot;&gt;
-		Links (Navigation&gt; should be here
+		&lt;ul&gt;
+			&lt;li&gt;Menu 1&lt;/li&gt;
+			&lt;li&gt;Menu 2&lt;/li&gt;
+			&lt;li&gt;Menu 3&lt;/li&gt;
+			&lt;li&gt;Menu 4&lt;/li&gt;
+		&lt;/ul&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;column column-9&quot;&gt;
-		Main Content should be here
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;column column-4&quot;&gt;
-		Latest news should be here
-	&lt;/div&gt;
-	&lt;div class=&quot;column column-4&quot;&gt;
-		Latest news should be here
-	&lt;/div&gt;
-	&lt;div class=&quot;column column-4&quot;&gt;
-		Latest news should be here
+	&lt;div class=&quot;column column-9 main-content&quot;&gt;
+		&lt;h2&gt;Menu 1&lt;/h2&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+		&lt;p&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 			</div>
@@ -479,67 +430,44 @@
     display: block;
 }
 
-.column + .column {
-    margin-left: 1.6%;
-}
+.column-1 {width: 8.33%;}
+.column-2 {width: 16.66%;}
+.column-3 {width: 25%;}
+.column-4 {width: 33.33%;}
+.column-5 {width: 41.66%;}
+.column-6 {width: 50%;}
+.column-7 {width: 58.33%;}
+.column-8 {width: 66.66%;}
+.column-9 {width: 75%;}
+.column-10 {width: 83.33%;}
+.column-11 {width: 91.66%;}
+.column-12 {width: 100%;}
 
-.column-1 {
-    width: 6.86666666667%;
+/*Some sample styling*/
+.column {padding: 10px;}
+.row {margin-bottom: 10px;}
+.header {
+    background-color: #f6a2ad;
+    color: #ffffff;
+    text-align: center;
 }
-
-.column-2 {
-    width: 15.3333333333%;
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-
-.column-3 {
-    width: 23.8%;
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-
-.column-4 {
-    width: 32.2666666667%;
+.menu li:hover {
+    background-color: #f6a2ad;
+    color: #ffffff;
 }
-
-.column-5 {
-    width: 40.7333333333%;
-}
-
-.column-6 {
-    width: 49.2%;
-}
-
-.column-7 {
-    width: 57.6666666667%;
-}
-
-.column-8 {
-    width: 66.1333333333%;
-}
-
-.column-9 {
-    width: 74.6%;
-}
-
-.column-10 {
-    width: 83.0666666667%;
-}
-
-.column-11 {
-    width: 91.5333333333%;
-}
-
-.column-12 {
-    width: 100%;
-    margin-left: 0;
-}
-
-/*For grid visibility purposes*/
-.column {
-	border: 1px solid black;
-	height: 300px;
-	text-aign: center;
-}
-.row {
-	margin-bottom: 10px;
+.main-content h2 {
+	color: #eb7077;
+	text-align: center;
 }</code></pre>
 			</div>
 			The examble above is just one way of making using of  a 12-column grid system. There are a lot of combinations that you can do as long as it sums up to the maximum number of columns you specified.
@@ -548,18 +476,18 @@
 			<hr/>
 			<!--Media Query-->
 			<h4>Media Query</h4>
-			Media queries are simple filters that can be applied to CSS styles. They make it easy to change styles based on the characteristics of the device rendering the content, including the display type, width, height, orientation and even resolution.
+			Media queries are simple filters that can be applied to CSS styles. They make it easy to change styles only if a certain condition is true. It uses the <code>@media</code> rule.
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Example</h3>
 				</div>
 				<div class="panel-body">
-					<p class="resize">TRY TO RESIZE THE WINDOW!</p>
+					<p class="resize">TRY TO RESIZE YOUR WINDOW!</p>
 				</div>
 			</div>
 			<div class="highlight"><pre class="html"><code>&lt;p class=&quot;resize&quot;&gt;
-	TRY TO RESIZE THE WINDOW!
+	TRY TO RESIZE YOUR WINDOW!
 &lt;/p&gt;</code></pre>
 			</div>
 			<div class="highlight"><pre class="css"><code>@media (max-width: 700px) {
@@ -665,6 +593,151 @@
 &lt;!--When the browser width is greater than the height, landscape.css will be applied.--&gt;
 &lt;link rel=&quot;stylesheet&quot; media=&quot;(orientation: landscape)&quot; href=&quot;landscape.css&quot;&gt;</code></pre>
 			</div>
+			
+			<br/> <br/>
+			
+			Earlier in this tutorial we made a web page with rows and columns, and it was responsive, but it did not look good on a small screen. Media queries can help with that. We can add a <strong>breakpoint</strong> where certain parts of the design will behave differently on each side of the breakpoint.
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Example</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row header">
+					    <div class="column1 col-12 col-m-12">
+					    		<h1>Title and Logo</h1>
+					    </div>
+					</div>
+					<div class="row menu">
+					    <div class="column1 col-3 col-m-12">
+					    		<ul>
+								<li>Menu 1</li>
+								<li>Menu 2</li>
+								<li>Menu 3</li>
+								<li>Menu 4</li>
+							</ul>
+					    </div>
+					    <div class="column1 col-9 col-m-12 main-content">
+					    		<h2>Menu 1</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					    </div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight"><pre class="html"><code>&lt;div class=&quot;row header&quot;&gt;
+	&lt;!--This column occupies 100% of width when viewed in desktop and tablet--&gt;
+	&lt;div class=&quot;column column-12 column-m-12&quot;&gt;
+		&lt;h1&gt;Title and Logo&lt;/h1&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row menu&quot;&gt;
+	&lt;!--This column occupies 25% of width when viewed in desktop and while 100% in tablet--&gt;
+	&lt;div class=&quot;column column-3 column-m-12&quot;&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Menu 1&lt;/li&gt;
+			&lt;li&gt;Menu 2&lt;/li&gt;
+			&lt;li&gt;Menu 3&lt;/li&gt;
+			&lt;li&gt;Menu 4&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;!--This column occupies 75% of width when viewed in desktop and while 100% in tablet--&gt;
+	&lt;div class=&quot;column column-9 column-m-12 main-content&quot;&gt;
+		&lt;h2&gt;Menu 1&lt;/h2&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+		&lt;p&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			</div>
+			<div class="highlight"><pre class="css"><code>.row, .column {
+    box-sizing: border-box;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.column {
+    position: relative;
+    float: left;
+    display: block;
+}
+
+/*selects all class values that contains the substring "column-"*/
+/* For Mobile Phones: */
+[class*="column-"] {
+	width: 100%;
+}
+
+/*if width is larger than 600px but smaller than 768px*/
+@media (min-width: 600px) {
+	/* For Tablets: */
+	.column-m-1 {width: 8.33%;}
+	.column-m-2 {width: 16.66%;}
+	.column-m-3 {width: 25%;}
+	.column-m-4 {width: 33.33%;}
+	.column-m-5 {width: 41.66%;}
+	.column-m-6 {width: 50%;}
+	.column-m-7 {width: 58.33%;}
+	.column-m-8 {width: 66.66%;}
+	.column-m-9 {width: 75%;}
+	.column-m-10 {width: 83.33%;}
+	.column-m-11 {width: 91.66%;}
+	.column-m-12 {width: 100%;}
+}
+
+/*if width is larger than 768px*/
+@media (min-width: 768px) {
+	/*For Desktop*/
+	.column-1 {width: 8.33%;}
+	.column-2 {width: 16.66%;}
+	.column-3 {width: 25%;}
+	.column-4 {width: 33.33%;}
+	.column-5 {width: 41.66%;}
+	.column-6 {width: 50%;}
+	.column-7 {width: 58.33%;}
+	.column-8 {width: 66.66%;}
+	.column-9 {width: 75%;}
+	.column-10 {width: 83.33%;}
+	.column-11 {width: 91.66%;}
+	.column-12 {width: 100%;}
+}
+
+/*Some sample styling*/
+.column {padding: 10px;}
+.row {margin-bottom: 10px;}
+.header {
+    background-color: #f6a2ad;
+    color: #ffffff;
+    text-align: center;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+    background-color: #f6a2ad;
+    color: #ffffff;
+}
+.main-content h2 {
+	color: #eb7077;
+	text-align: center;
+}</code></pre>
+			</div>
+			The example above was a modified version of the previous example. Two media queries are defined: one for devices larger than 600px but smaller than 768px (phone), and another for devices larger than 768px (desktop). Notice that the two sets are almost identical, the only difference is the name (column- and column-m-). The design for the mobile phone is defined first and also not defined in a media query anymore since its design will be displayed if all conditions of the media queries are false.
+			
 			
 			<hr/>
 			<!--References-->

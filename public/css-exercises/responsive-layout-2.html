@@ -21,21 +21,19 @@
 	</div>
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<h2>Selectors 2</h2>
+			<h2>Responsive Layout 2</h2>
 			Your file for this exercise should be saved in the public folder and should be accessed using this link: <strong>"/css-exercises/responsive-layout-2.html"</strong>. The content of the HTML file is given below. With the given HTML content, design the web page using an <strong>internal style sheet</strong> in such a way it will look <strong>exactly</strong> like the screenshot below.
 			<br/>
-			<h6 style="color:red;font-weight:bold;">Note: You cannot modify the content, only the style sheet!</h6>
+			<h6 style="color:red;font-weight:bold;">Note: You cannot modify the content, only the style sheet AND the classes!</h6>
 			
 			<hr/>
 			Aside from the design visible in the screenshot, here are some additional details for the design of the web page:
 			<ul>
-				<li>The font type of the whole page should be <em>Century Gothic</em>.</li>
-				<li>The body should have a left and right margin of <em>100px</em>.</li>
-				<li>All of the paragraphs should be <em>justified</em> and have an indention of <em>20px</em>.</li>
-				<li>The image should have a size of <em>500x350 (px)</em> and a left margin of <em>20px</em>.</li>
-				<li>The link <strong>sunnyskyz</strong> should be colored <em>#0099CC</em> and when hovered should be <em>underlined</em>.</li>
-				<li>The table should have a width of <em>500px</em>, <em>1px</em> border width, <em>black</em> border color and <em>solid</em> border style.</li>
-				<li>The alternating background colors in the table are <em>#B2DFEE</em> and <em>#0099CC</em> while the text colors are <em>black</em> and <em>white</em>.</li>
+				<li>All of the elements should have the <em>box-sizing</em> property set to <em>border-box</em>.</li>
+				<li>Make use of meta tag to specify the author and description of your exercise.</li>
+				<li>Make use of meta tag to set the width of the page to follow the screen-width of the device and set the initial zoom level when the page is first loaded by the browser.</li>
+				<li>The CSS rule for the column sizes are already included in the HTML page, you just need to set the right classes for each div tag (column) to fix the display of the page when viewed on desktop, tablet and mobile phone (See the 3 screenshots).</li>
+				
 			</ul>
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -45,80 +43,160 @@
 			<div class="highlight"><pre class="html"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 	&lt;head&gt;
-		&lt;title&gt;CMSC 2 CSS Exercise&lt;/title&gt;
+		&lt;style&gt;
+			/* Insert Additional Styles Here */
+			
+			body {
+				font-family: &quot;Lucida Sans&quot;, sans-serif;
+			}
+			[class*=&quot;col-&quot;] {
+				float: left;
+				padding: 15px;
+			}
+			.header {
+				background-color: #8d3441;
+				color: #ffffff;
+				text-align: center;
+			}
+			.vertical ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			.vertical li {
+				padding: 8px;
+				margin-bottom: 7px;
+				background-color :#f06060;
+				color: #ffffff;
+				box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			}
+			.vertical li:hover {
+				background-color: #f2dde1;
+				color: #000000;
+			}
+			.horizontal ul {
+				background-color :#f06060;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+			.horizontal li {
+				padding: 8px;
+				background-color :#f06060;
+				color: #ffffff;
+				box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+				float: left;
+				width: 25%;
+				text-align: center;
+			}
+			.horizontal li:hover {
+				background-color: #f2dde1;
+				color: #000000;
+			}
+			.footer {
+				background-color: #8d3441;
+				color: #ffffff;
+				text-align: center;
+				font-size: 12px;
+				padding: 15px;
+			}
+			
+			/* For mobile phones: */
+			[class*=&quot;col-&quot;] {
+				width: 100%;
+			}
+			.horizontal li {font-size:0.7em;}
+			@media (min-width: 600px) {
+				/* For tablets: */
+				.horizontal li {font-size:1em;}
+				.col-m-12 {width: 8.33%;}
+				.col-m-2 {width: 16.66%;}
+				.col-m-3 {width: 25%;}
+				.col-m-4 {width: 33.33%;}
+				.col-m-5 {width: 41.66%;}
+				.col-m-6 {width: 50%;}
+				.col-m-7 {width: 58.33%;}
+				.col-m-8 {width: 66.66%;}
+				.col-m-9 {width: 75%;}
+				.col-m-10 {width: 83.33%;}
+				.col-m-11 {width: 91.66%;}
+				.col-m-12 {width: 100%;}
+			}
+			@media (min-width: 768px) {
+				/* For desktop: */
+				.horizontal li {font-size:1em;}
+				.col-1 {width: 8.33%;}
+				.col-2 {width: 16.66%;}
+				.col-3 {width: 25%;}
+				.col-4 {width: 33.33%;}
+				.col-5 {width: 41.66%;}
+				.col-6 {width: 50%;}
+				.col-7 {width: 58.33%;}
+				.col-8 {width: 66.66%;}
+				.col-9 {width: 75%;}
+				.col-10 {width: 83.33%;}
+				.col-11 {width: 91.66%;}
+				.col-12 {width: 100%;}
+			}
+		&lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
-		
-		&lt;div id=&quot;main-story&quot;&gt;
-			&lt;h1&gt;one of my students made me cry&lt;/h1&gt;
-			&lt;h4&gt;By Teacher, Retrieved from &lt;a href=&quot;http://www.sunnyskyz.com/feel-good-story/1858/One-of-my-students-made-me-cry#V3dYttjZEaGBdhDg.99&quot; id=&quot;main-source&quot;&gt;sunnyskyz&lt;/a&gt;.&lt;/h4&gt;
-			
-			
-			&lt;img src=&quot;http://i.huffpost.com/gen/1423287/images/o-TEACHER-FOR-AMERICA-facebook.jpg&quot; alt=&quot;Teacher&quot; /&gt;
-			&lt;p id=&quot;first-p&quot;&gt;I teach in a brilliant school in the UK - not a private school, but somewhere the kids are almost universally excellent. I realised that something was wrong very quickly with you. You were once a happy, radiant girl. You were top of the school academically, friendly, popular. Even now, in your last year of school, you had dreams of being a doctor.&lt;/p&gt;
-
-			&lt;p&gt;But every now and again I&#39;d see your lip quiver in class. It would take you slightly too long to respond to question. Your shoulders were more hunched than your usual confident gait.&lt;/p&gt;
-
-			&lt;p&gt;I asked you to stay behind after class. You must have thought you were in trouble.&lt;/p&gt;
-
-			&lt;p&gt;We spoke for hours that evening, just you and I, sitting at a pupil desk. I stayed long after I said to my wife I&#39;d be home, holding your hand, just listening. We spoke about everything. TV. Sports. How my favourite chocolate bar was a Wispa, but you thought they were too bubbly. We spoke about a condition. A condition I know very little about, but one I&#39;ve since read almost everything Google has to say about it. Russell&#39;s sign. Ever so slight tooth decay. Weight loss. Low self esteem. Suicidal thoughts. You didn&#39;t want your parents to know.&lt;/p&gt;
-
-			&lt;p&gt;We managed to get you therapy. Every two weeks you&#39;d attend a class, and I&#39;d be the first person you&#39;d report back to. Trying food diaries. Replacing your bad thoughts with positive ones.&lt;/p&gt;
-
-			&lt;p&gt;You got better. It took 6 months. Tears, rages, you swore at me more times than I can count, several times I kept you in my class after hours because I knew if I let you go home you&#39;d do something stupid.&lt;/p&gt;
-
-			&lt;p&gt;But damn it, you got better.&lt;/p&gt;
-
-			&lt;p&gt;Two days ago I came to your Leavers Prom. You looked gorgeous, healthy, radiant. I&#39;ve never seen a student smile so wide and so often. You asked me to dance - I felt you squeeze my hand as we twirled to the music.&lt;/p&gt;
-
-			&lt;p&gt;Yesterday was your Leavers Day. You came in to my class for the last time, on your own, clutching your accepted offer to university. I told you I was proud of you. I am so damn proud of you.&lt;/p&gt;
-
-			&lt;p&gt;I outstretched my hand and wished you the best of luck. You pushed it out the way and came in for a hug. I don&#39;t know how long it lasted, but these hugs are ones you don&#39;t put a time limit on.&lt;/p&gt;
-
-			&lt;p&gt;Just as you were about to leave you said you had a gift for me, to say thanks for the support. Some of my students have given me expensive gifts over the years - champagne, whisky, luxury food baskets and the like.&lt;/p&gt;
-
-			&lt;p&gt;You handed me a single Wispa chocolate bar. I have no shame in saying I broke down and cried in front of you. I broke about a thousand school rules by squeezing your hand, kissing you on the cheek and saying thank you. It&#39;s the best present I&#39;ve ever received.&lt;/p&gt;
-
-			&lt;p id=&quot;last-p&quot;&gt;Good luck kid. Go be the best damn doctor you can be.&lt;/p&gt;
+		&lt;div class=&quot;row&quot;&gt;
+			&lt;div class=&quot;column horizontal&quot;&gt;
+				&lt;ul&gt;
+					&lt;li&gt;Home&lt;/li&gt;
+					&lt;li&gt;Products&lt;/li&gt;
+					&lt;li&gt;Company&lt;/li&gt;
+					&lt;li&gt;Contact&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
 		&lt;/div&gt;
 		
-		&lt;hr/&gt;
-		
-		&lt;div id=&quot;other-stories&quot;&gt;
-			&lt;h3&gt;Other Inspiring Stories&lt;/h3&gt;
-			&lt;table&gt;
-				&lt;tr class=&quot;even&quot;&gt;
-					&lt;th&gt;Title&lt;/th&gt;
-					&lt;th&gt;Author&lt;/th&gt;
-				&lt;/tr&gt;
-				&lt;tr class=&quot;odd&quot;&gt;
-					&lt;td&gt;Why To Love God&lt;/td&gt;
-					&lt;td&gt;Sonia Kaur&lt;/td&gt;
-				&lt;/tr&gt;
-				&lt;tr class=&quot;even&quot;&gt;
-					&lt;td&gt;The Starfish&lt;/td&gt;
-					&lt;td&gt;Cris&lt;/td&gt;
-				&lt;/tr&gt;
-				&lt;tr class=&quot;odd&quot;&gt;
-					&lt;td&gt;Second Chances&lt;/td&gt;
-					&lt;td&gt;Joseph J. Mazzella&lt;/td&gt;
-				&lt;/tr&gt;
-				&lt;tr class=&quot;even&quot;&gt;
-					&lt;td&gt;Be The Candle&lt;/td&gt;
-					&lt;td&gt;Bob Dailey&lt;/td&gt;
-				&lt;/tr&gt;
-			&lt;/table&gt;
+		&lt;div class=&quot;row header&quot;&gt;
+			&lt;div class=&quot;column&quot;&gt;
+				&lt;h1&gt;Company Name&lt;/h1&gt;
+			&lt;/div&gt;
 		&lt;/div&gt;
-		
-		&lt;hr/&gt;
-		
-		&lt;div id=&quot;questions&quot;&gt;
-			&lt;h3&gt;Application Questions&lt;/h3&gt;
-			&lt;ol&gt;
-				&lt;li&gt;What have you learned from the story?&lt;/li&gt;
-				&lt;li&gt;What can you do to appreciate the people who continuously supports you?&lt;/li&gt;
-			&lt;/ol&gt;
+
+		&lt;div class=&quot;row&quot;&gt;
+			&lt;div class=&quot;column vertical&quot;&gt;
+				&lt;ul&gt;
+					&lt;li&gt;Button 1&lt;/li&gt;
+					&lt;li&gt;Button 2&lt;/li&gt;
+					&lt;li&gt;Button 3&lt;/li&gt;
+					&lt;li&gt;Button 4&lt;/li&gt;
+					&lt;li&gt;Button 5&lt;/li&gt;
+					&lt;li&gt;Button 6&lt;/li&gt;
+					&lt;li&gt;Button 7&lt;/li&gt;
+					&lt;li&gt;Button 8&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+
+			&lt;div class=&quot;column&quot;&gt;
+				&lt;h1&gt;Welcome&lt;/h1&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+			&lt;/div&gt;
+
+			&lt;div class=&quot;column&quot;&gt;
+				&lt;h1&gt;News&lt;/h1&gt;
+				&lt;p&gt;&lt;strong&gt;06.27.15 - News Header&lt;/strong&gt; &lt;br/&gt; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. &lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;06.28.15 - News Header&lt;/strong&gt; &lt;br/&gt; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. &lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;06.29.15 - News Header&lt;/strong&gt; &lt;br/&gt; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. &lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;06.30.15 - News Header&lt;/strong&gt; &lt;br/&gt; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. &lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;07.01.15 - News Header&lt;/strong&gt; &lt;br/&gt; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. &lt;/p&gt;
+			&lt;/div&gt;
 		&lt;/div&gt;
+
+	&lt;div class=&quot;row footer&quot;&gt;
+		&lt;div class=&quot;column&quot;&gt;
+			&lt;h3&gt;&amp;#169; 2015. All rights reserved.&lt;/h3&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
 	&lt;/body&gt;
 &lt;/html&gt;</code></pre>
 			</div>
@@ -128,7 +206,14 @@
 					<h3 class="panel-title">Screenshot</h3>
 				</div>
 				<div class="panel-body">
-					<img src="/images/selectors-2.png" alt="Selectors Exercise" style="width:100%;" />
+					<h4>Desktop Layout</h4>
+					<img src="/images/responsive-layout-2-desktop.png" alt="Responsive Layout Exercise: Desktop Screenshot" style="width:85%;margin:0 auto;" /> <br/>
+					
+					<h4>Tablet Layout</h4>
+					<img src="/images/responsive-layout-2-tablet.png" alt="Responsive Layout Exercise: Desktop Screenshot" style="width:85%;margin:0 auto;" /> <br/>
+					
+					<h4>Mobile Layout</h4>
+					<img src="/images/responsive-layout-2-mobile.png" alt="Responsive Layout Exercise: Desktop Screenshot" style="width:85%;margin:0 auto;" /> <br/>
 				</div>
 			</div>
 			
