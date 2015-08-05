@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CMSC 2 Introduction to Internet</title>	
+	<link href="/css/materialize.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/github-gist.css">
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<h2>Conditional Statements</h2>
+			Your file for this exercise should be saved in the public folder and should be accessed using this link: <strong>"/javascript-exercises/conditional-statements.html"</strong>. Include all the scripts using an <strong>external file</strong> that should be accessed using this link: <strong>"/script/conditional-statements.js"</strong>.
+			
+			<br/> <br/>
+			
+			Conditional statements are a set of statements used to perform different actions based on different conditions. JavaScript supports two conditional statements: <strong>if-else</strong> and <strong>switch</strong>. But before we discuss them, let's first discuss some important topics such as Boolean Values, Comparison and Logical Operators.
+			
+			<hr/>
+			<!--Boolean Values-->
+			<h4>Boolean Values</h4>
+			A JavaScript Boolean represents one of two values: <strong>true</strong> or <strong>false</strong>. You can use the <code>Boolean()</code> function to find out if an expression (or a variable) is true.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<div>
+					<script>
+						function compareValues(){
+							var x = Boolean(111 > 32);
+							//you can also omit the keyword Boolean
+							var y = (12 < 12);
+							var z = (12 >= 43);
+							document.getElementById('sample1').innerHTML = x + "<br/>" + y + "<br/>" + z;
+						}
+					</script>
+					<p>Boolean Example</p>
+					<input type="button" onclick="compareValues()" value="Compare Values"/>
+					<p id="sample1"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function compareValues(){
+		var x = Boolean(111 &gt; 32);
+		//you can also omit the keyword Boolean
+		var y = (12 &lt; 12);
+		var z = (12 &gt;= 43);
+		document.getElementById(&#39;sample1&#39;).innerHTML = x + &quot;&lt;br/&gt;&quot; + y + &quot;&lt;br/&gt;&quot; + z;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;Boolean Example&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;compareValues()&quot; value=&quot;Compare Values&quot;/&gt;
+&lt;p id=&quot;sample1&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<hr/>
+			<!--Comparison Operators-->
+			<h4>Comparison Operators</h4>
+			Comparison operators are used in logical statements to determine equality or difference between variables or values.
+			
+			<br/> <br/>
+			
+			These are the comparison operators that you can use in JavaScript. For the examples given, let's assume that <strong>x=5</strong>.
+			<table class="striped responsive-table">
+				<tr>
+					<th style="width:12%">Operator</th>
+					<th>Description</th>
+				<th>Example</th>
+				</tr>
+				<tr>
+					<td>==</td>
+					<td>equal to</td>
+					<td>(x == 8) //returns false</td>
+				</tr>
+				<tr>
+					<td>===</td>
+					<td>equal value and equal type</td>
+					<td>(x === &quot;5&quot;) //returns false</td>
+				</tr>
+				<tr>
+					<td>!=</td>
+					<td>not equal</td>
+					<td>(x != 8) //returns true</td>
+				</tr>
+				<tr>
+					<td>!==</td>
+					<td>not equal value or not equal type</td>
+					<td>(x !== "5") //returns true</td>
+				</tr>
+				<tr>
+					<td>&gt;</td>
+					<td>greater than</td>
+					<td>(x &gt; 8) //returns false</td>
+				</tr>
+				<tr>
+					<td>&lt;</td>
+					<td>less than</td>
+					<td>(x &lt; 8) //returns true</td>
+				</tr>
+					<tr>
+					<td>&gt;=</td>
+					<td>greater than or equal to</td>
+					<td>(x &gt;= 8) //returns false</td>
+				</tr>
+				<tr>
+					<td>&lt;=</td>
+					<td>less than or equal to</td>
+					<td>(x &lt;= 8) //returns true</td>
+				</tr>
+				</table>
+			
+			<br/> <br/>
+			
+			Some things that you need to know: 
+			<ul>
+				<li>All numberic values are evaluated as true.</li>
+				<li>All string values are evaluated as true.</li>
+				<li>Any expression (except zero) is evaluated as true.</li>
+				<li>Zero (0 or -0), empty string ("") and NaN are evaluated as false.</li>
+			</ul>
+			
+			<br/>
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<div>
+					<script>
+						function evalValues(){
+							var a = Boolean(5);
+							var b = Boolean(-123332);
+							var c = Boolean("Hello World!");
+							var d = Boolean(9 * 3 - 21);
+							var e = Boolean(-0);
+							var f = Boolean("");
+							var g;
+							var h = Boolean(g);
+							document.getElementById('sample2').innerHTML = a + "<br/>" + b + "<br/>" + c + "<br/>" + d + "<br/>" + e + "<br/>" + f + "<br/>" + h;
+						}
+					</script>
+					<p>Comparison Operator Examples</p>
+					<input type="button" onclick="evalValues()" value="Evaluate Values"/>
+					<p id="sample2"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function evalValues(){
+		var w = Boolean(5);
+		var x = Boolean(-123332);
+		var y = Boolean(&quot;Hello World!&quot;);
+		var z = Boolean(9 * 3 - 21);
+		var e = Boolean(-0);
+		var f = Boolean("");
+		var g;
+		var h = Boolean(g);
+		document.getElementById(&#39;sample2&#39;).innerHTML = w + &quot;&lt;br/&gt;&quot; + x + &quot;&lt;br/&gt;&quot; + y + &quot;&lt;br/&gt;&quot; + z;
+	}
+&lt;/script&gt;
+&lt;p&gt;Comparison Operator Examples&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;evalValues()&quot; value=&quot;Evaluate Values&quot;/&gt;
+&lt;p id=&quot;sample2&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<hr/>
+			<!--Logical Operators-->
+			<h4>Logical Operators</h4>
+			Logical operators are used to determine the logic between variables or values.
+			
+			<br/> <br/>
+			
+			These are the logical operators that you can use in JavaScript. For the examples given, let's assume that <strong>x=12</strong> and <strong>y=22</strong>.
+			<table class="striped responsive-table">
+				<tr>
+					<th style="width:12%">Operator</th>
+					<th>Description</th>
+				<th>Example</th>
+				</tr>
+				<tr>
+					<td>&&</td>
+					<td>and</td>
+					<td>(x > 10 && y == 10) //returns false</td>
+				</tr>
+				<tr>
+					<td>||</td>
+					<td>or</td>
+					<td>(x != 12 || y <= 22) //returns true</td>
+				</tr>
+				<tr>
+					<td>!</td>
+					<td>not</td>
+					<td>!(x == 12) //returns false</td>
+				</tr>
+			</table>
+			
+			<hr/>
+			<!--If-Else Statement-->
+			<h4>If-Else Statement</h4>
+			The <code>if</code> statement us used to specify a block of JavaScript code to be executed if a condition is <strong>true</strong>.
+			
+			<!--SYNTAX-->
+			<div class="card-panel grey lighten-3">
+				<h5>If Syntax</h5>
+				<div class="highlight"><pre class="javascript"><code>if (condition) {
+    block of code to be executed if the condition is true
+}</code></pre>
+				</div>
+			</div>
+			
+			<br/>
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<div>
+					<script>
+						function evalExp1(x,y){
+							if(x > y){
+								document.getElementById('sample3').innerHTML = x + " is greater than " + y;
+							}
+						}
+					</script>
+					<p>If Example</p>
+					<input type="button" onclick="evalExp1(3,1)" value="Evaluate Expression"/>
+					<p id="sample3"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function evalExp1(x,y){
+		if(x > y){
+			document.getElementById(&#39;sample3&#39;).innerHTML = x + &quot; is greater than &quot; + x;
+		}
+	}
+&lt;/script&gt;
+&lt;p&gt;If Example&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;evalExp1(3,1)&quot; value=&quot;Evaluate Expression&quot;/&gt;
+&lt;p id=&quot;sample3&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			The <code>else</code> statement is used to specify a block of code to be executed if the condition is <strong>false</strong>.
+			
+			<!--SYNTAX-->
+			<div class="card-panel grey lighten-3">
+				<h5>If-Else Syntax</h5>
+				<div class="highlight"><pre class="javascript"><code>if (condition) {
+    block of code to be executed if the condition is true
+} else {
+	block of code to be executed if the condition is false
+}</code></pre>
+				</div>
+			</div>
+			
+			<br/>
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<div>
+					<script>
+						function evalExp2(x,y){
+							if(x > y){
+								document.getElementById('sample4').innerHTML = x + " is greater than " + y;
+							}else{
+								document.getElementById('sample4').innerHTML = x + " is less than " + y;
+							}
+						}
+					</script>
+					<p>If-Else Example</p>
+					<input type="button" onclick="evalExp2(1,3)" value="Evaluate Expression"/>
+					<p id="sample4"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function evalExp2(x,y){
+		if(x > y){
+			document.getElementById(&#39;sample4&#39;).innerHTML = x + &quot; is greater than &quot; + x;
+		}else{
+			document.getElementById(&#39;sample4&#39;).innerHTML = x + &quot; is less than &quot; + x;
+		}
+	}
+&lt;/script&gt;
+&lt;p&gt;If-Else Example&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;evalExp2(1,3)&quot; value=&quot;Evaluate Expression&quot;/&gt;
+&lt;p id=&quot;sample4&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+
+			<hr/>
+			<!--References-->
+			<h4>References</h4>
+			<ul>
+				<li><a href="http://www.w3schools.com/">W3Schools</a> </li>
+				<li><a href="http://www.tutorialspoint.com/javascript/javascript_functions.htm">JavaScript Functions</a></li>
+			</ul>
+		</div><!--col-md-12-->
+	</div><!--end of row-->
+</div>
+
+<script type="text/javascript" src="/script/jquery.min.js"></script>
+<script type="text/javascript" src="/script/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/script/materialize.min.js"></script>
+<script src="/script/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

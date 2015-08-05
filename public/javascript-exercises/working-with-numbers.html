@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CMSC 2 Introduction to Internet</title>	
+	<link href="/css/materialize.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/github-gist.css">
+	<script type="text/javascript">
+		function sayHello() {
+            alert("Hello World!");
+         }
+	</script>
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<h2>Working with Numbers</h2>
+			Your file for this exercise should be saved in the public folder and should be accessed using this link: <strong>"/javascript-exercises/working-with-numbers.html"</strong>. Include all the scripts using an <strong>external file</strong> that should be accessed using this link: <strong>"/script/working-with-numbers.js"</strong>.
+			
+			<br/> <br/>
+			
+			<hr/>
+			<!--Functions-->
+			<h4>Functions</h4>
+			A <strong>function</strong> is a group of reusable code which can be called anywhere in your program. It is executed when "something" invokes it (calls it).
+			
+			<br/> <br/>
+			
+			A JavaScript function is defined with the <code>function</code> keyword, followed by a <code>name</code>, followed by <code>parentheses</code>. The parentheses may include 0 or more parameter names separated by commas: (parameter1,  parameter2, ...). The code to be executed by the function is placed inside curly brackets. Function names can contain letters, digits, underscores, and dollar signs (same rules as variables). 
+			
+			<!--SYNTAX-->
+			<div class="card-panel grey lighten-3">
+				<h5>Function Definition Syntax</h5>
+				<div class="highlight"><pre class="javascript"><code>function name(parameter1, parameter2, parameter3) {
+    code to be executed
+}</code></pre>
+				</div>
+			</div>
+			
+			In our discussion about functions, there are some terms that you need to learn:
+			<ul style="text-indent:40px;">
+				<li>Function <strong>parameters</strong> are the names listed in the function definition.</li>
+				<li>Function <strong>arguments</strong> are the real values received by the function when it is invoked (called).</li>
+				<li><strong>Local</strong> variables are variable inside the function.</li>
+			</ul>
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	//Creates a popup box with text Hello World!
+	function sayHello() {
+		alert("Hello World!");
+	}
+&lt;/script&gt;</code></pre>
+				</div>
+			</div>
+			
+			As discussed, the example above will not be executed if it is not yet invoked (called).
+			
+			<br/> <br/>
+		
+			The code inside a function will execute when an event occurs (when a user clicks a button), when it is invoked (called) from JavaScript code, or automatically (self invoked).	To invoke (call) a function, you simply need to write the name of that function as shown in the following code.
+			
+			<br/> <br/>
+			
+			Let's try to add a button to invoke the JavaScript function:
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<p>Click the button to call the function</p>
+					<form>
+						<input type="button" onclick="sayHello()" value="Say Hello">
+					</form>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;p&gt;Click the button to call the function&lt;/p&gt;
+&lt;form&gt;
+	 &lt;input type=&quot;button&quot; onclick=&quot;sayHello()&quot; value=&quot;Click Me!&quot;&gt;
+&lt;/form&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			Images and styles can also be manipulated using functions.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function changeImage() {
+							document.getElementById('lbulb').src = "/images/pic_bulbon.gif";
+							var par = document.getElementById('sample1');
+							par.style.color = "yellow";
+							par.style.fontWeight = "bold";
+						}
+					</script>
+					<p>Image and Style</p>
+					<img src="/images/pic_bulboff.gif" style="margin:auto;" onclick="changeImage()" alt="Lightbulb" id="lbulb" />
+					<p id="sample1">Click the light bulb to turn it on!</p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function changeImage() {
+		document.getElementById(&quot;lbulb&quot;).src = &quot;/images/pic_bulbon.gif&quot;;
+		var par = document.getElementById(&quot;sample1&quot;);
+		par.style.color = &quot;yellow&quot;;
+		par.style.fontWeight = &quot;bold&quot;;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;Image and Style&lt;/p&gt;
+&lt;img src=&quot;/images/pic_bulboff.gif&quot; onclick=&quot;changeImage()&quot; alt=&quot;Lightbulb&quot; id=&quot;lbulb&quot; /&gt;
+&lt;p id=&quot;sample1&quot;&gt;Click the light bulb to turn it on!&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			Now, let's try to create a function with parameters. Values can be passed to parameters while calling a function. These passed values will be captured inside the function and any manipulation can be done over those parameters.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script type="text/javascript">
+						//Writes in the page the name and age values
+				         function outputDetails(name, age){
+				            document.write (name + " is " + age + " years old.");
+				         }
+				      </script>
+					<p>Example with Parameters</p>
+					<form>
+						<input type="button" onclick="outputDetails('Senyora', 18)" value="View Senyora Details">
+					</form>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	 function outputDetails(name, age){
+		document.write (name + &quot; is &quot; + age + &quot; years old.&quot;);
+	 }
+&lt;/script&gt;
+
+&lt;p&gt;Example with Parameters&lt;/p&gt;
+&lt;p&gt;Click the button to call the function&lt;/p&gt;
+&lt;form&gt;
+	&lt;input type=&quot;button&quot; onclick=&quot;outputDetails(&#39;Senyora&#39;, 18)&quot; value=&quot;View Senyora Details&quot;&gt;
+&lt;/form&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			If the function was invoked from a statement, JavaScript will <strong>return</strong> to execute the code after the invoking statement. Functions often compute a return value. The return value is "returned" back to the "caller" using the <code>return</code> statement. This statement should be the <strong>last</strong> statement in a function.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script type="text/javascript">
+						function concatenate(first, last) {
+							var full;
+							full = first + " " + last;
+							return full;
+						}
+						
+						function outputName(first, last) {
+							document.write ("First name: " + first + ".<br>");
+							document.write ("Last name: " + last + ".<br>");
+							var result = concatenate(first, last)
+							document.write ("Put it together: " + result + "!");
+						}
+				      </script>
+					<p>Example with Return Value</p>
+					<form>
+						<input type="button" onclick="outputName('Anna', 'Manalastas')" value="Concatenate!">
+					</form>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	//Concatenates the first and last name
+	function concatenate(first, last) {
+		var full;
+		full = first + &quot; &quot; + last;
+		return full;
+	}
+	
+	//Writes in the page the first and last name values
+	function outputName(first, last) {
+		document.write (&quot;First name: &quot; + first + &quot;.&lt;br&gt;&quot;);
+		document.write (&quot;Last name: &quot; + last + &quot;.&lt;br&gt;&quot;);
+		var result = concatenate(first, last)
+		document.write (&quot;Put it together: &quot; + result + &quot;!&quot;);
+	}
+&lt;/script&gt;
+  
+&lt;p&gt;Example with Return Value&lt;/p&gt;
+&lt;p&gt;Click the button to call the function&lt;/p&gt;
+&lt;form&gt;
+	&lt;input type=&quot;button&quot; onclick=&quot;outputName(&#39;Anna&#39;, &#39;Manalastas&#39;)&quot; value=&quot;Concatenate!&quot;&gt;
+&lt;/form&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			Another example using JavaScript function is converting the temperature from fahrenheit to celsius.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function getCelsius() {
+						var fahr = document.getElementById("fahrenheit").value;
+						    document.getElementById("celsius").value = (5/9) * (fahr-32);
+						} 
+					</script>
+					<p>Convert Fahr to Cel</p>
+					<form>
+						<label>Fahrenheit</label>
+						<input type="text" name="fahrenheit" id="fahrenheit">
+						<label>Celsius</label>
+						<input type="text" name="celsius" id="celsius">
+						<input type="button" onclick="getCelsius()" value="Convert">
+					</form>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function getCelsius() {
+		var fahr = document.getElementById(&quot;fahrenheit&quot;).value;
+		document.getElementById(&quot;celsius&quot;).value = (5/9) * (fahr-32);
+	} 
+&lt;/script&gt;
+
+&lt;p&gt;Convert Fahr to Cel&lt;/p&gt;
+&lt;form&gt;
+	&lt;label&gt;Fahrenheit&lt;/label&gt;
+	&lt;input type=&quot;text&quot; name=&quot;fahrenheit&quot; id=&quot;fahrenheit&quot;&gt;
+	&lt;label&gt;Celsius&lt;/label&gt;
+	&lt;input type=&quot;text&quot; name=&quot;celsius&quot; id=&quot;celsius&quot;&gt;
+	&lt;input type=&quot;button&quot; onclick=&quot;getCelsius()&quot; value=&quot;Convert&quot;&gt;
+&lt;/form&gt;</code></pre>
+				</div>
+			</div>
+			
+			<hr/>
+			<!--Numbers-->
+			<h4>Numbers</h4>
+			Numbers in JavaScript can be written with, or without, decimals.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Example</h5>
+				<div class="highlight"><pre class="javascript"><code>var x = 34.00;	// A number with decimals
+var y = 34;	// A number without decimals</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			Numbers with scientific (exponent) notation can also be written.
+		
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Example</h5>
+				<div class="highlight"><pre class="javascript"><code>var x = 123e5	// 12300000
+var y = 123e-5;	// 0.00123</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			Integers (numbers without a period or exponent notation) are considered accurate up to 15 digits. As for the floating point numbers, the maximum number of decimals is 17.
+			
+			<br/> <br/>
+			
+			JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function convertToHex() {
+							document.getElementById("sample2").innerHTML = "0xFF = " + 0xFF;
+						}
+					</script>
+					<p>Hexadecimal Values</p>
+					<input type="button" onclick="convertToHex()" value="Convert"/>
+					<p id="sample2"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function convertToHex() {
+		document.getElementById(&quot;sample2&quot;).innerHTML = &quot;0xFF = &quot; + 0xFF;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;Hexadecimal Values&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;convertToHex()&quot; value=&quot;Convert&quot;/&gt;
+&lt;p id=&quot;sample2&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			<strong>Infinity (or -Infinity)</strong> is the value JavaScript will return if you calculate a number outside the largest possible number. It is of number type.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function computeInf() {
+							var x = 2/0;
+							var y = -2/0;
+							document.getElementById("sample3").innerHTML = "To " + x + " or " + y + " and Beyond!";
+						}
+					</script>
+					<p>Infinity Example</p>
+					<input type="button" onclick="computeInf()" value="Compute" />
+					<p id="sample3"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function computeInf() {
+		var x = 2/0;
+		var y = -2/0;
+		document.getElementById(&quot;sample3&quot;).innerHTML = &quot;To &quot; + x + &quot; or &quot; + y + &quot; and Beyond!&quot;;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;Infinity Example&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;computeInf()&quot; value=&quot;Compute&quot; /&gt;
+&lt;p id=&quot;sample3&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			<strong>Nan</strong> (Not a Number) is a JavaScript reserved word indicating that a value is not a number. Trying to do arithmetic with a non-numeric string will result in NaN. It is also of number type.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function computeNaN() {
+							document.getElementById("sample4").innerHTML = 100 / "Hello World!";
+						}
+					</script>
+					<p>NaN Example</p>
+					<input type="button" onclick="computeNaN()" value="Compute" />
+					<p id="sample4"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function computeNaN() {
+		document.getElementById(&quot;sample4&quot;).innerHTML = 100 / &quot;Hello World!&quot;;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;NaN Example&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;computeNaN()&quot; value=&quot;Compute&quot; /&gt;
+&lt;p id=&quot;sample4&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/>
+			
+			<hr/>
+			<!--Numbers and Strings-->
+			<h4>Numbers and Strings</h4>
+			JavaScript strings are used for storing and manipulating text. A string can be any text inside single or double quotes while numbers can be integers or floating-point numbers that does not require the use of quotes. In JavaScript, numbers can be converted to string, vice versa.
+			
+			<br/> <br/>
+			
+			Numbers can be converted to string using the <code>toString()</code> method.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function numToStr(num1, num2) {
+							var x = num1+ num2;
+							var y = num1.toString() + num2.toString();
+							document.getElementById("sample5").innerHTML = "The sum of " + num1 + " and " + num2 + " is " + x + ". <br/> Put it together: " + y + "! <3";
+						}
+					</script>
+					<p>Num to Str</p>
+					<input type="button" onclick="numToStr(14,3)" value="Convert Number" />
+					<p id="sample5"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function numToStr(num1, num2) {
+		var x = num1+ num2;
+		var x = num1.toString() + num2.toString();
+		document.getElementById(&quot;sample5&quot;).innerHTML = &quot;The sum of &quot; + num1 + &quot; and &quot; + num2 + &quot; is &quot; + x + &quot;. &lt;br/&gt; Put it together: &quot; + y + &quot;! &lt;3&quot;;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;Num to Str&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;numToStr(14, 3)&quot; value=&quot;Convert Number&quot; /&gt;
+&lt;p id=&quot;sample5&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			Strings can also be converted to Numbers using the <code>parseInt()</code> and <code>parseFloat()</code> method.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function strToNum(str1, str2) {
+							var w = parseInt(str1);
+							var x = parseInt(str2);
+							var y = parseFloat(str2);
+							document.getElementById("sample6").innerHTML = w + "<br/>" + x + "<br/>" + y;
+						}
+					</script>
+					<p>Str to Num</p>
+					<input type="button" onclick="strToNum('15','10.333')" value="Convert" />
+					<p id="sample6"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function strToNum(str1, str2) {
+		var w = parseInt(str1);
+		var x = parseInt(str2);
+		var y = parseFloat(str2);
+		var z;	//try to convert str1 to float
+		document.getElementById(&quot;sample6&quot;).innerHTML = w + &quot;&lt;br/&gt;&quot; + x + &quot;&lt;br/&gt;&quot; + y;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;Str to Num&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;strToNum('15','10.333')&quot; value=&quot;Convert&quot; /&gt;
+&lt;p id=&quot;sample6&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+
+			<br/>
+			
+			<hr/>
+			<!--Math Object-->
+			<h4>Math Object</h4>
+			The Math object allows you to perform mathematical tasks on numbers.
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function outputCons() {
+							document.getElementById("sample7").innerHTML = "E = " + Math.E + "<br>" + "PI = " + Math.PI + "<br>" + "Square root of 2 = " + Math.SQRT2 + "<br>";
+						}
+					</script>
+					<p>Here are some Math constants.</p>
+					<input type="button" onclick="outputCons()" value="Print Constants"/>
+					<p id="sample7"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function outputCons() {
+		document.getElementById(&quot;sample7&quot;).innerHTML = &quot;E = &quot; + Math.E + &quot;&lt;br&gt;&quot; + &quot;PI = &quot; + Math.PI + &quot;&lt;br&gt;&quot; + &quot;Square root of 2 = &quot; + Math.SQRT2 + &quot;&lt;br&gt;&quot;;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;Here are some Math constants.&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;outputCons()&quot; value=&quot;Print Constants&quot;/&gt;
+&lt;p id=&quot;sample7&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			These are other Math object properties that you can use:
+			
+			<table class="striped responsive-table">
+				<tr>
+					<th style="width:20%">Property</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>E</td>
+					<td>Returns Euler's number (approx. 2.718)</td>
+				</tr>
+				<tr>
+					<td>LN2</td>
+					<td>Returns the natural logarithm of 2 (approx. 0.693)</td>
+				</tr>
+				<tr>
+					<td>LN10</td>
+					<td>Returns the natural logarithm of 10 (approx. 2.302)</td>
+				</tr>
+				<tr>
+					<td>LOG2E</td>
+					<td>Returns the base-2 logarithm of E (approx. 1.442)</td>
+				</tr>
+				<tr>
+					<td>LOG10E</td>
+					<td>Returns the base-10 logarithm of E (approx. 0.434)</td>
+				</tr>
+				<tr>
+					<td>PI</td>
+					<td>Returns PI (approx. 3.14)</td>
+				</tr>
+				<tr>
+					<td>SQRT1_2</td>
+					<td>Returns the square root of 1/2 (approx. 0.707)</td>
+				</tr>
+				<tr>
+					<td>SQRT2</td>
+					<td>Returns the square root of 2 (approx. 1.414)</td>
+				</tr>
+			</table>
+			
+			<br/> <br/>
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function getMax() {
+							document.getElementById("sample8").innerHTML = Math.max(0, 150, 30, 20, -8);
+						}
+					</script>
+					<p>String Method Example</p>
+					<input type="button" onclick="getMax()" value="Find Max"/>
+					<p id="sample8"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function getMax() {
+		document.getElementById(&quot;sample8&quot;).innerHTML = Math.max(0, 150, 30, 20, -8);
+	}
+&lt;/script&gt;
+
+&lt;p&gt;String Method Example&lt;/p&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;getMax()&quot; value=&quot;Find Max&quot;/&gt;
+&lt;p id=&quot;sample8&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			
+			<br/> <br/>
+			
+			These are other Math object methods that you can use:
+			
+			<table class="striped responsive-table">
+				<tr>
+					<th style="width:20%">Method</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>abs(x)</td>
+					<td>Returns the absolute value of x</td>
+				</tr>
+				<tr>
+					<td>acos(x)</td>
+					<td>Returns the arccosine of x, in radians</td>
+				</tr>
+				<tr>
+					<td>asin(x)</td>
+					<td>Returns the arcsine of x, in radians</td>
+				</tr>
+				<tr>
+					<td>atan(x)</td>
+					<td>Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians</td>
+				</tr>
+				<tr>
+					<td>atan2(y,x)</td>
+					<td>Returns the arctangent of the quotient of its arguments</td>
+				</tr>
+				<tr>
+					<td>ceil(x)</td>
+					<td>Returns x, rounded upwards to the 
+				nearest integer</td>
+				</tr>
+				<tr>
+					<td>cos(x)</td>
+					<td>Returns the cosine of x (x is in radians)</td>
+				</tr>
+				<tr>
+					<td>exp(x)</td>
+					<td>Returns the value of E<sup>x</sup></td>
+				</tr>
+				<tr>
+					<td>floor(x)</td>
+					<td>Returns x, rounded downwards to the nearest integer</td>
+				</tr>
+				<tr>
+					<td>log(x)</td>
+					<td>Returns the natural logarithm (base E) of x</td>
+				</tr>
+				<tr>
+					<td>max(x,y,z,...,n)</td>
+					<td>Returns the number with the highest value</td>
+				</tr>
+				<tr>
+					<td>min(x,y,z,...,n)</td>
+					<td>Returns the number with the lowest value</td>
+				</tr>
+				<tr>
+					<td>pow(x,y)</td>
+					<td>Returns the value of x to the power of y</td>
+				</tr>
+				<tr>
+					<td>random()</td>
+					<td>Returns a random number between 0 and 1</td>
+				</tr>
+				<tr>
+					<td>round(x)</td>
+					<td>Rounds x to the nearest integer</td>
+				</tr>
+				<tr>
+					<td>sin(x)</td>
+					<td>Returns the sine of x (x is in radians)</td>
+				</tr>
+				<tr>
+					<td>sqrt(x)</td>
+					<td>Returns the square root of x</td>
+				</tr>
+				<tr>
+					<td>tan(x)</td>
+					<td>Returns the tangent of an angle</td>
+				</tr>
+			</table>
+			
+			<br/> <br/>
+			
+			<!--EXAMPLE-->
+			<div class="card-panel grey lighten-3">
+				<h5>Try This Example!</h5>
+				<hr/>
+				<div>
+					<script>
+						function getRand() {
+							var x = Math.random(); //randomize
+							var y = Math.floor((Math.random() * 50) + 1); //randomize between 1 to 50
+							document.getElementById("sample9").innerHTML = x + "<br/>" + y;
+							document.getElementById("rand").value = "Click Me Baby One More Time!";
+						}
+					</script>
+					<p>Randomize</p>
+					<input id="rand" type="button" onclick="getRand()" value="Click Me!"/>
+					<p id="sample9"></p>
+				</div>
+				<div class="highlight"><pre class="html"><code>&lt;script&gt;
+	function getRand() {
+		var x = Math.random(); //randomize
+		var y = Math.floor((Math.random() * 50) + 1); //randomize between 1 to 50
+		document.getElementById(&quot;sample9&quot;).innerHTML = x + &quot;&lt;br/&gt;&quot; + y;
+		document.getElementById(&quot;rand&quot;).value = &quot;Click Me Baby One More Time!&quot;;
+	}
+&lt;/script&gt;
+
+&lt;p&gt;Randomize&lt;/p&gt;
+&lt;input id=&quot;rand&quot; type=&quot;button&quot; onclick=&quot;getRand()&quot; value=&quot;Click Me!&quot;/&gt;
+&lt;p id=&quot;sample9&quot;&gt;&lt;/p&gt;</code></pre>
+				</div>
+			</div>
+			The example above generates random numbers, one that is completely random, the other with a specified range. Click the button again to generate new random numbers.
+			
+			<br/> <br/>
+			
+			<hr/>
+			<!--References-->
+			<h4>References</h4>
+			<ul>
+				<li><a href="http://www.w3schools.com/">W3Schools</a> </li>
+				<li><a href="http://www.tutorialspoint.com/javascript/javascript_functions.htm">JavaScript Functions</a></li>
+			</ul>
+		</div><!--col-md-12-->
+	</div><!--end of row-->
+</div>
+
+<script type="text/javascript" src="/script/jquery.min.js"></script>
+<script type="text/javascript" src="/script/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/script/materialize.min.js"></script>
+<script src="/script/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
